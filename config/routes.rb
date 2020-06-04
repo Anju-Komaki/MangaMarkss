@@ -13,9 +13,14 @@ Rails.application.routes.draw do
   #管理者側
   namespace :admins do
     resources :comics, only:[:index, :show, :new, :create, :edit, :update, :destroy]
+    resources :users, only:[:index, :show] do
+      collection do #全体データにアクション
+        get :csv_download, defaults: { format: 'csv'} #デフォルト形式をCSVに設定
+      end
+    end
   end
-  post '/admins/comics/new' => 'admins/comics#create' #ルーティングエラー発生のため追記
-  patch '/admins/comics/:id/edit' => 'admins/comics#update' #同上
+  post '/admins/comics/new' => 'admins/comics#create'
+  patch '/admins/comics/:id/edit' => 'admins/comics#update'
 
  #ユーザ側
   root 'homes#top'

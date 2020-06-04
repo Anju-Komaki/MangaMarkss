@@ -15,6 +15,7 @@
     <nav>
     <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn">
     <% if user_signed_in? %>
+      <li><%= link_to t('.Top'), root_path %></li>
       <li><%= link_to t('.Notice') %></li>
       <li><%= link_to t('.Trend'), comics_path %></li>
       <li><%= link_to t('.News') %></li>
@@ -24,10 +25,11 @@
       <li><%= link_to('English', :locale => 'en') %></li>
     <% elsif admin_signed_in? %>
       <li><%= link_to ' 漫画', admins_comics_path  %></li>
-      <li><%= link_to ' 会員'  %></li>
+      <li><%= link_to ' 会員', admins_users_path  %></li>
       <li><%= link_to 'お知らせ' %></li>
       <li><%= link_to "ログアウト", destroy_admin_session_path , method: :delete %></li>
     <% else %>
+      <li><%= link_to t('.Top'), root_path %></li>
       <li><%= link_to t(".About"), homes_about_path %></li>
       <li><%= link_to t(".News") %></li>
       <li><%= link_to t(".SignUp"), new_user_registration_path %></li>

@@ -1,0 +1,23 @@
+<div class="container">
+ <div class="row">
+   <!--ユーザ情報-->
+   <table class="table table-bordered">
+		 <tr>
+		 	 <td>登録日</td>
+			 <td><%= @user.created_at.strftime('%Y/%m/%d') %></td>
+		 </tr>
+		 <tr>
+		 	 <td>ユーザ名</td>
+			 <td><%= @user.username %></td>
+		 </tr>
+		 <tr>
+		 	 <td>メールアドレス</td>
+			 <td><%= @user.email %></td>
+		 </tr>
+		 <tr>
+		 	 <td>出身国</td>
+			 <td><%= @user.country %></td>
+		 </tr>
+  </table>
+ </div>
+</div>
