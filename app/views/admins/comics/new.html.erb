@@ -30,6 +30,8 @@
       <%= f.text_area :body, class:"form-control" %><br>
       <p>表紙</p>
       <%= f.attachment_field :comic_image %>
+      <p>タグ</p>
+      <%= f.text_field :tag_list, value: @comic.tag_list.join(','), class: "form-control" %><br>
       <%= f.submit "submit", class:"btn" %>
 <% end %>
 </div>

@@ -6,6 +6,7 @@
 	<%= t('.publisher') %>:<%= @comic.publisher %>(<%= @comic.publisher_en %>)<br>
 	<%= t('.ISBN') %>:<%= @comic.isbn_code %><br>
 	<%= t('.outline') %>:<%= @comic.body %><br>
+	<%= t('.tag') %>:<%= @comic.tag_list.map { |tag| "##{tag}" }.join(' ') %><br>
 
 	<h2><%= t('.Comment') %></h2>
 	<!--コメント一覧-->

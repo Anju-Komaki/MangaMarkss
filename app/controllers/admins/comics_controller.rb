@@ -15,7 +15,7 @@ class Admins::ComicsController < ApplicationController
 
 	def create
 		@comic = Comic.new(comic_params)
-		@comic.save
+		@comic.save!
 		redirect_to admins_comics_path
 	end
 
@@ -37,6 +37,6 @@ class Admins::ComicsController < ApplicationController
 
 	private
 	def comic_params
-		params.require(:comic).permit(:title, :isbn_code, :author, :publisher, :title_en, :author_en, :publisher_en, :comic_image, :body)
+		params.require(:comic).permit(:title, :isbn_code, :author, :publisher, :title_en, :author_en, :publisher_en, :comic_image, :body, :tag_list)
 	end
 end
