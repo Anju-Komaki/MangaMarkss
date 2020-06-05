@@ -19,7 +19,7 @@
       <li><%= link_to t('.Notice') %></li>
       <li><%= link_to t('.Trend'), comics_path %></li>
       <li><%= link_to t('.News') %></li>
-      <li><%= link_to t('.Mypage') %></li>
+      <li><%= link_to t('.Mypage'), user_path(current_user) %></li>
       <li><%= link_to t(".Logout"), destroy_user_session_path, method: :delete %></li>
       <li><%= link_to('日本語', :locale => 'ja') %></li>
       <li><%= link_to('English', :locale => 'en') %></li>

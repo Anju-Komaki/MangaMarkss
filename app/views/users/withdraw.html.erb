@@ -1,0 +1,9 @@
+<div class="container">
+	<div class="row">
+		<p><%= t('Are you sure?') %></p>
+		<p><%= t('If you are withdraw, you lose all date') %></p>
+
+		<%= link_to t('.Not withdraw'),edit_user_path(current_user),  class: "btn btn-primary" %>
+        <%= link_to t('.Withdraw'), hide_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？", class: "btn btn-danger" %>
+	</div>
+</div>

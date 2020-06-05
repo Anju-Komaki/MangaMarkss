@@ -31,5 +31,10 @@ Rails.application.routes.draw do
   resources :comics, only:[:index, :show] do
     resources :comments, only:[:create, :destroy]
   end
+
+  #退会処理(論理削除)のルーティング
+  put 'hide' => 'users#hide'
+  patch 'hide' => 'users#hide'
+  get 'withdraw' => 'users#withdraw'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
