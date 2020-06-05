@@ -8,4 +8,8 @@ class Comic < ApplicationRecord
 	#Relation
 	belongs_to :user, optional: true
 	has_many :comments, dependent: :destroy
+	has_many :bookmarks, dependent: :destroy
+	def bookmarked_by?(user)
+		bookmarks.where(user_id: user.id).exists?
+	end
 end

@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   resources :users
   resources :comics, only:[:index, :show] do
     resources :comments, only:[:create, :destroy]
+    resources :bookmarks, only:[:create, :destroy]
   end
 
   #退会処理(論理削除)のルーティング

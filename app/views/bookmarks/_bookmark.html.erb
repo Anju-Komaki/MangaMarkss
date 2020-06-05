@@ -1,0 +1,9 @@
+<% if comic.bookmarked_by?(current_user) %>
+ <%= link_to  comic_bookmark_path(comic), method: :delete do %>
+ ☆ <%= comic.bookmarks.count %>
+ <% end %>
+<% else %>
+ <%= link_to  comic_bookmarks_path(comic), method: :post do %>
+ ★ <%= comic.bookmarks.count %>
+ <% end %>
+<% end %>

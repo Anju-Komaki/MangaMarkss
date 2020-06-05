@@ -3,6 +3,16 @@
 		<%= attachment_image_tag current_user,:profile_image, :fill, 40, 40, format: 'jpeg' %>
 		<h3><%= @user.username %></h3><br>
 		<%= @user.caption %>
-		<%= link_to 'edit', edit_user_path(@user) %>
+		<%= link_to 'edit', edit_user_path(@user) %><br>
+
+        <!--ユーザのブックマーク一覧の表示-->
+        <h3><%= t('.Bookmark') %></h3>
+		<% @bookmarks.each do |bookmark| %>
+		 <% comic = Comic.find(bookmark.comic_id) %>
+		 <%= link_to comic_path(comic.id) do %>
+	      <%= attachment_image_tag bookmark.comic,:comic_image, :fill, 100, 100, format: 'jpeg' %>
+	     <% end %><br>
+		 <%= bookmark.comic.title %><br>
+		<% end %>
 	</div>
 </div>
