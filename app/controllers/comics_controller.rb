@@ -6,5 +6,6 @@ class ComicsController < ApplicationController
 	def show
 		@comic = Comic.find(params[:id])
 		@comment = Comment.new
+		@user = User.find(params[:id])
 	end
 end

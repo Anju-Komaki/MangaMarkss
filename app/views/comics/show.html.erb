@@ -17,7 +17,7 @@
 	<!--コメント投稿-->
 	<% if user_signed_in? %>
 		<div class="comment-post">
-			<%= form_with model: [@comic, @comment], data: {remote: true}  do |f| %>
+			<%= form_with model: [@comic, @comment], data: {remote: true} do |f| %>
 			 <%= f.text_area :comment, class: "input-mysize"  %>
 			 <%= f.submit 'submit', class: "btn btn-primary" %>
 			<% end %>

@@ -3,8 +3,8 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-		@user = current_user
-		@bookmarks = Bookmark.where(user_id: @user.id).all #ユーザのブックマーク一覧表示
+		#ユーザのブックマーク一覧表示
+		@bookmarks = Bookmark.where(user_id: @user.id).all
 	end
 
 	def edit
@@ -30,6 +30,19 @@ class UsersController < ApplicationController
 		reset_session
 		flash[:notice] = "ありがとうございました。またのご利用をお待ちしております。"
 		redirect_to root_path
+	end
+
+	#フォロー＆フォロワー一覧
+	def following
+		@user = User.find(params[:id])
+		@users = @user.following
+		render 'index_follow'
+	end
+
+	def followers
+		@user = User.find(params[:id])
+		@users = @user.followers
+		render 'index_follower'
 	end
 
 	private

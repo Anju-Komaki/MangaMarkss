@@ -27,7 +27,12 @@ Rails.application.routes.draw do
   get 'homes/top'
   get 'homes/about'
 
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+  resources :relationships, only:[:create, :destroy]
   resources :comics, only:[:index, :show] do
     resources :comments, only:[:create, :destroy]
     resources :bookmarks, only:[:create, :destroy]

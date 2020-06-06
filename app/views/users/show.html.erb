@@ -5,6 +5,23 @@
 		<%= @user.caption %>
 		<%= link_to 'edit', edit_user_path(@user) %><br>
 
+        <!--フォロー＆フォロワー-->
+        <div class="follower">
+        	<%= t('.follower') %>
+        	<%= link_to followers_user_path(@user) do %>
+        	 <%= @user.followers.count %>
+        	<% end %>
+        </div>
+        <div class="follow">
+        	<%= t('.follow') %>
+        	<%= link_to following_user_path(@user) do %>
+        	 <%= @user.following.count %>
+        	<% end %>
+        </div>
+        <div>
+        	<%= render 'follow_form' %>
+        </div>
+
         <!--ユーザのブックマーク一覧の表示-->
         <h3><%= t('.Bookmark') %></h3>
 		<% @bookmarks.each do |bookmark| %>
