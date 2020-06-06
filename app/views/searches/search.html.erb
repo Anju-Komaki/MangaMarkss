@@ -1,0 +1,33 @@
+<% if @column == 'title' %>
+  <h3>search for '<%= @content %>'</h3>
+	<% @records.each do |comic| %>
+	<%= link_to comic_path(comic.id) do %>
+	<%= attachment_image_tag comic,:comic_image, :fill, 100, 100, format: 'jpeg' %>
+	<% end %><br>
+	<%= comic.title %><br>
+	<% end %>
+  <% elsif @column == 'author' %>
+  <h3>search for '<%= @content %>'</h3>
+	<% @records.each do |comic| %>
+	<%= link_to comic_path(comic.id) do %>
+	<%= attachment_image_tag comic,:comic_image, :fill, 100, 100, format: 'jpeg' %>
+	<% end %><br>
+	<%= comic.title %><br>
+	<% end %>
+  <% elsif @column == 'title_en' %>
+  <h3>search for '<%= @content %>'</h3>
+	<% @records.each do |comic| %>
+	<%= link_to comic_path(comic.id) do %>
+	<%= attachment_image_tag comic,:comic_image, :fill, 100, 100, format: 'jpeg' %>
+	<% end %><br>
+	<%= comic.title %><br>
+	<% end %>
+  <% else @column == 'author_en' %>
+  <h3>search for '<%= @content %>'</h3>
+	<% @records.each do |comic| %>
+	<%= link_to comic_path(comic.id) do %>
+	<%= attachment_image_tag comic,:comic_image, :fill, 100, 100, format: 'jpeg' %>
+	<% end %><br>
+	<%= comic.title %><br>
+	<% end %>
+ <% end %>

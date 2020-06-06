@@ -37,9 +37,19 @@
       <li><%= link_to('日本語', :locale => 'ja') %></li>
       <li><%= link_to('English', :locale => 'en') %></li>
     <% end %>
+     <!--検索-->
+     <div class="pull-right">
+      <%= form_tag(search_path, method: :get) do %>
+        <%= text_field_tag 'search[content]' %>
+        <%= select_tag 'search[column]', options_for_select({ "作品名" => "title", "作者" => "author","title" => "title_en", "author" => "author_en" }) %>
+        <%= select_tag 'search[method]', options_for_select({ "完全一致" => "perfect", "部分一致" => "partial" }) %>
+      <%= submit_tag '検索' %>
+      <% end %>
+     </div>
   </ul>
 </nav>
-</div>
+
+ </div>
 </header>
     <%= yield %>
   </body>

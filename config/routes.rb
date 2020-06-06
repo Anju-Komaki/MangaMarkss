@@ -42,5 +42,10 @@ Rails.application.routes.draw do
   put 'hide' => 'users#hide'
   patch 'hide' => 'users#hide'
   get 'withdraw' => 'users#withdraw'
+
+  #検索
+  get '/search', to: 'searches#search'
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

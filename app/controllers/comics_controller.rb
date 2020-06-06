@@ -8,4 +8,5 @@ class ComicsController < ApplicationController
 		@comment = Comment.new
 		@user = User.find(params[:id])
 	end
+
 end
