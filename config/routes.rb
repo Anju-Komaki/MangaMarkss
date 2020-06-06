@@ -44,8 +44,7 @@ Rails.application.routes.draw do
   get 'withdraw' => 'users#withdraw'
 
   #検索
-  get '/search', to: 'searches#search'
-
+  get '/search' => 'searches#search'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
