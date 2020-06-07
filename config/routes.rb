@@ -37,6 +37,8 @@ Rails.application.routes.draw do
     resources :comments, only:[:create, :destroy]
     resources :bookmarks, only:[:create, :destroy]
   end
+  resources :notifications, only:[:index]
+  delete 'notifications/destroy_all' => 'notifications#destroy_all'
 
   #退会処理(論理削除)のルーティング
   put 'hide' => 'users#hide'

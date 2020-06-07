@@ -1,0 +1,10 @@
+<% visitor_user = User.find(notification.visitor_id) %>
+
+<%= link_to user_path(visitor_user) do %>
+	<%= visitor_user.username %>
+<% end %>さんが
+
+<% case notification.action %>
+	<% when 'follow' then %>
+	<%= "あなたをフォローしました" %>
+<% end %>

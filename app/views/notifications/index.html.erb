@@ -1,0 +1,15 @@
+<div class="container">
+	<div class="row">
+		<h1><%= t('.notification')%></h1>
+		 <%= link_to notifications_destroy_all_path, method: :delete do %>
+		 <p>全削除</p>
+		 <% end %>
+
+		 <% if @notifications.exists? %>
+		 <% notifications = @notifications.where.not(visitor_id: current_user.id) %>
+		  <%= render @notifications %>
+		 <% else %>
+		  <p>通知はありません</p>
+		 <% end %>
+	</div>
+</div>
