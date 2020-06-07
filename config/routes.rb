@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   #管理者側
   namespace :admins do
     resources :comics, only:[:index, :show, :new, :create, :edit, :update, :destroy]
+    resources :informations, only:[:index, :show, :new, :create, :edit, :update, :destroy]
     resources :users, only:[:index, :show] do
       collection do #全体データにアクション
         get :csv_download, defaults: { format: 'csv'} #デフォルト形式をCSVに設定
@@ -21,6 +22,8 @@ Rails.application.routes.draw do
   end
   post '/admins/comics/new' => 'admins/comics#create'
   patch '/admins/comics/:id/edit' => 'admins/comics#update'
+  post '/admins/informations/new' => 'admins/informations#create'
+  patch '/admins/informations/:id/edit' => 'admins/informations#update'
 
  #ユーザ側
   root 'homes#top'
@@ -39,6 +42,7 @@ Rails.application.routes.draw do
   end
   resources :notifications, only:[:index]
   delete 'notifications/destroy_all' => 'notifications#destroy_all'
+  resources :informations, only:[:index, :show]
 
   #退会処理(論理削除)のルーティング
   put 'hide' => 'users#hide'

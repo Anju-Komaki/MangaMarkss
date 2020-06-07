@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="row">
+	 <h1>お知らせ一覧</h1> <%= link_to '追加', new_admins_information_path %><br>
+	   <table class="table">
+	   	<thead>
+	   		<tr>
+	   			<th>日時</th>
+	   			<th>タイトル</th>
+	   			<th>タグ</th>
+	   			<th colspan="3"></th>
+	   		</tr>
+	   	</thead>
+	   	<tbody>
+	      <% @informations.each do |information| %>
+	        <% information.tag_list.each do |tag| %>
+	   		<tr>
+	            <td><%= information.created_at.strftime('%Y/%m/%d') %></td>
+	   			<td><%= information.title %></td>
+	   			<td><%= link_to tag, admins_informations_path(tag_name: tag) %></td>
+	   			<td><%= link_to 'show', admins_information_path(information.id) %></td>
+	   			<td><%= link_to 'edit', edit_admins_information_path(information.id) %></td>
+	   			<td><%= link_to 'destroy', admins_information_path(information.id), method: :delete %><td>
+	        </tr>
+	        <% end %>
+	       <% end %>
+		    </tbody>
+	   </table>
+    </div>
+</div>

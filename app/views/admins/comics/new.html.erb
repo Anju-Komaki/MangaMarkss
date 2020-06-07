@@ -6,7 +6,7 @@
           <div id="error_explanation">
            <h2><%= @comic.errors.count %>件のエラーが発生しました。</h2>
            <ul>
-           <% @travel_image.errors.full_messages.each do |message| %>
+           <% @comic.errors.full_messages.each do |message| %>
             <li><%= message %></li>
           <% end %>
         </ul>

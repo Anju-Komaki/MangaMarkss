@@ -1,9 +1,11 @@
-<div class="">
-	<h1>漫画一覧</h1> <%= link_to '追加', new_admins_comic_path %><br>
+<div class="container">
+	<div class="row">
+	 <h1>漫画一覧</h1> <%= link_to '追加', new_admins_comic_path %><br>
 	<% @comics.each do |comic| %>
 	<%= comic.title %>
 	<%= link_to 'show', admins_comic_path(comic.id) %>
 	<%= link_to 'edit', edit_admins_comic_path(comic.id) %>
 	<%= link_to 'destroy', admins_comic_path(comic.id), method: :delete %><br>
 	<% end %>
+    </div>
 </div>

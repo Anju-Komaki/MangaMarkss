@@ -1,0 +1,8 @@
+<div class="container">
+	<div class="row">
+	 tag:<%= @information.tag_list.map { |tag| "##{tag}" }.join(' ') %><br>
+     <%= @information.created_at.strftime('%Y/%m/%d') %><br>
+	 <%= @information.title %><br>
+	 <%= @information.body %><br>
+	</div>
+</div>

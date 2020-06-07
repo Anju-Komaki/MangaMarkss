@@ -9,7 +9,19 @@ class Comic < ApplicationRecord
 	belongs_to :user, optional: true
 	has_many :comments, dependent: :destroy
 	has_many :bookmarks, dependent: :destroy
+
 	def bookmarked_by?(user)
 		bookmarks.where(user_id: user.id).exists?
 	end
+
+	#validation
+	validates :isbn_code, presence: true
+	validates :title, presence: true
+	validates :author, presence: true
+	validates :publiser, presence: true
+	validates :title_en, presence: true
+	validates :author_en, presence: true
+	validates :publiser_en, presence: true
+	validates :body, presence: true
+	validates :tag_list, presence: true
 end

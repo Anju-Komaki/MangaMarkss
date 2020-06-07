@@ -1,0 +1,26 @@
+<div class="container">
+ <div class="row">
+    <div class="col-xs-9">
+      <h2 class="form-header-title">新規作成</h2>
+        <%= form_for(@information, url: new_admins_information_path) do |f| %>
+         <% if @information.errors.any? %>
+          <div id="error_explanation">
+           <h2><%= @information.errors.count %>件のエラーが発生しました。</h2>
+           <ul>
+            <% @information.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+           </ul>
+          </div>
+        <% end %><br>
+      <p>タイトル</p>
+      <%= f.text_field :title %><br>
+      <p>内容</p>
+      <%= f.text_area :body, class:"form-control" %><br>
+      <p>タグ</p>
+      <%= f.text_field :tag_list, value: @information.tag_list.join(','), class: "form-control" %><br>
+      <%= f.submit "保存", class:"btn" %>
+        <% end %>
+  </div>
+ </div>
+</div>

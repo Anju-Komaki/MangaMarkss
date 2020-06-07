@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<%= attachment_image_tag current_user,:profile_image, :fill, 40, 40, format: 'jpeg' %>
+		<%= attachment_image_tag @user,:profile_image, :fill, 40, 40, format: 'jpeg' %>
 		<h3><%= @user.username %></h3><br>
 		<%= @user.caption %>
 		<%= link_to 'edit', edit_user_path(@user) %><br>

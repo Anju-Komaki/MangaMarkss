@@ -21,7 +21,7 @@
       <% end %>
       <li><%= link_to t('.Notice'), notifications_path %></li>
       <li><%= link_to t('.Trend'), comics_path %></li>
-      <li><%= link_to t('.News') %></li>
+      <li><%= link_to t('.News'), informations_path %></li>
       <li><%= link_to t('.Mypage'), user_path(current_user) %></li>
       <li><%= link_to t(".Logout"), destroy_user_session_path, method: :delete %></li>
       <li><%= link_to('日本語', :locale => 'ja') %></li>
@@ -29,12 +29,12 @@
     <% elsif admin_signed_in? %>
       <li><%= link_to ' 漫画', admins_comics_path  %></li>
       <li><%= link_to ' 会員', admins_users_path  %></li>
-      <li><%= link_to 'お知らせ' %></li>
+      <li><%= link_to 'お知らせ', admins_informations_path %></li>
       <li><%= link_to "ログアウト", destroy_admin_session_path , method: :delete %></li>
     <% else %>
       <li><%= link_to t('.Top'), root_path %></li>
       <li><%= link_to t(".About"), homes_about_path %></li>
-      <li><%= link_to t(".News") %></li>
+      <li><%= link_to t(".News"), informations_path %></li>
       <li><%= link_to t(".SignUp"), new_user_registration_path %></li>
       <li><%= link_to t(".Login"), new_user_session_path %></li>
       <li><%= link_to('日本語', :locale => 'ja') %></li>

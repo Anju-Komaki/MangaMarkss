@@ -1,15 +1,17 @@
-<div class="">
-	<h1>漫画詳細</h1>
-	<%= attachment_image_tag @comic,:comic_image, :fill, 100, 100, format: 'jpeg' %><br>
-	<%= @comic.title %><br>
-	<%= @comic.title_en %><br>
-	<%= @comic.author %><br>
-	<%= @comic.author_en %><br>
-	<%= @comic.publisher %><br>
-	<%= @comic.publisher_en %><br>
-	<%= @comic.isbn_code %><br>
-	<%= @comic.body %><br>
-	<%= t('.tag') %>:<%= @comic.tag_list.map { |tag| "##{tag}" }.join(' ') %><br>
-    <%= link_to 'edit', edit_admins_comic_path(@comic) %>
-    <%= link_to 'destroy', admins_comic_path(@comic), method: :delete %>
+<div class="container">
+	<div class="row">
+	 <h1>漫画詳細</h1>
+	 <%= attachment_image_tag @comic,:comic_image, :fill, 100, 100, format: 'jpeg' %><br>
+	 <%= @comic.title %><br>
+	 <%= @comic.title_en %><br>
+	 <%= @comic.author %><br>
+	 <%= @comic.author_en %><br>
+	 <%= @comic.publisher %><br>
+	 <%= @comic.publisher_en %><br>
+	 <%= @comic.isbn_code %><br>
+	 <%= @comic.body %><br>
+	 <%= t('.tag') %>:<%= @comic.tag_list.map { |tag| "##{tag}" }.join(' ') %><br>
+     <%= link_to 'edit', edit_admins_comic_path(@comic) %>
+     <%= link_to 'destroy', admins_comic_path(@comic), method: :delete %>
+    </div>
 </div>
