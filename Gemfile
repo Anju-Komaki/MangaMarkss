@@ -81,6 +81,7 @@ gem 'bootstrap-sass'
 #admins
 gem "chartkick"
 gem 'acts-as-taggable-on'
+gem 'groupdate'
 
 #other
 gem 'rubocop-airbnb'

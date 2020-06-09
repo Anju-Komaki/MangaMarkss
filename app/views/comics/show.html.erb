@@ -1,4 +1,5 @@
-<div class="">
+<div class="container">
+	<div class="row">
 	<h1>漫画詳細</h1>
 	<%= attachment_image_tag @comic,:comic_image, :fill, 100, 100, format: 'jpeg' %><br>
 	<%= t('.title') %>:<%= @comic.title %>(<%= @comic.title_en %>)<br>
@@ -7,20 +8,19 @@
 	<%= t('.ISBN') %>:<%= @comic.isbn_code %><br>
 	<%= t('.outline') %>:<%= @comic.body %><br>
 	<%= t('.tag') %>:<%= @comic.tag_list.map { |tag| "##{tag}" }.join(' ') %><br>
+	<div id="star-rate-<%= @comment.id %>">
+		<%= t('.total') %>:
+		<%= @comic.comments.average(:rate).to_f.round(1) %>
+	</div>
+
 	<%= render 'bookmarks/bookmark', comic: @comic %>
 
 	<h2><%= t('.Comment') %></h2>
+	<!--コメント入力-->
+	    <%= render 'comments/form' %>
 	<!--コメント一覧-->
 	<div class="comment_<%= @comic.id %>">
 		<%= render 'comments/index', comments: @comic_comments %>
 	</div>
-	<!--コメント投稿-->
-	<% if user_signed_in? %>
-		<div class="comment-post">
-			<%= form_with model: [@comic, @comment], data: {remote: true} do |f| %>
-			 <%= f.text_area :comment, class: "input-mysize"  %>
-			 <%= f.submit 'submit', class: "btn btn-primary" %>
-			<% end %>
-		</div>
-	<% end %>
+	</div>
 </div>

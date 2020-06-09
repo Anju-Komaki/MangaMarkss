@@ -1,6 +1,6 @@
 class ComicsController < ApplicationController
 	def index
-		@comics = Comic.all
+		@comics = Comic.find(Bookmark.group(:comic_id).order('count(comic_id) desc').pluck(:comic_id))
 		if params[:tag_name]
 		@comics = Comic.tagged_with("#{params[:tag_name]}")
 	    end
@@ -11,10 +11,4 @@ class ComicsController < ApplicationController
 		@comment = Comment.new
 		@user = User.find(params[:id])
 	end
-    private
-
-    def comic_params
-    params.require(:comic).permit(:tag_list)
-    end
-
 end
