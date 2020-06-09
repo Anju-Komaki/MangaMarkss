@@ -2,12 +2,12 @@
 	<div class="row">
 	<h1>漫画詳細</h1>
 	<%= attachment_image_tag @comic,:comic_image, :fill, 100, 100, format: 'jpeg' %><br>
-	<%= t('.title') %>:<%= @comic.title %>(<%= @comic.title_en %>)<br>
-	<%= t('.author') %>:<%= @comic.author %>(<%= @comic.author_en %>)<br>
-	<%= t('.publisher') %>:<%= @comic.publisher %>(<%= @comic.publisher_en %>)<br>
+	<%= t('.title') %>:<%= @comic.title %>/<%= @comic.title_en %><br>
+	<%= t('.author') %>:<%= @comic.author %>/<%= @comic.author_en %><br>
+	<%= t('.publisher') %>:<%= @comic.publisher %>/<%= @comic.publisher_en %><br>
 	<%= t('.ISBN') %>:<%= @comic.isbn_code %><br>
 	<%= t('.outline') %>:<%= @comic.body %><br>
-	<%= t('.tag') %>:<%= @comic.tag_list.map { |tag| "##{tag}" }.join(' ') %><br>
+	<%= @comic.tag_list.map { |tag| "##{tag}" }.join(' ') %><br>
 	<div id="star-rate-<%= @comment.id %>">
 		<%= t('.total') %>:
 		<%= @comic.comments.average(:rate).to_f.round(1) %>

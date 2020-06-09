@@ -2,9 +2,9 @@
 
 <%= link_to user_path(visitor_user) do %>
 	<%= visitor_user.username %>
-<% end %>さんが
+<% end %>
 
 <% case notification.action %>
 	<% when 'follow' then %>
-	<%= "あなたをフォローしました" %>
+	<%= t('.followed') %>
 <% end %>

@@ -2,15 +2,15 @@
 	<div class="row">
 		<h2><%= t('.Editing Profile') %></h2>
 		 <%= form_for(@user) do |f| %>
-		   <label><%= t('.Username') %></label>
+		   <label><%= t('.username') %></label>
 		   <%= f.text_field :username, placeholder: "username", class: "form-control" %>
            <br>
 		   <label><%= t('.caption') %></label>
 		   <%= f.text_area :caption, placeholder: "caption", class: "form-control" %>
 		   <label><%= t('.profile image') %></label>
 		   <%= f.attachment_field :profile_image %>
-		   <%= f.submit "Update", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
-		   <%= link_to 'withdraw', withdraw_path %>
+		   <%= f.submit 'update', class: "btn btn-primary" %>
+		   <%= link_to t('.withdraw'), withdraw_path, class: "btn btn-danger" %>
 		 <% end %>
 	</div>
 </div>

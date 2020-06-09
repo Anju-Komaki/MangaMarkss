@@ -2,14 +2,14 @@
 	<div class="row">
 		<h1><%= t('.notification')%></h1>
 		 <%= link_to notifications_destroy_all_path, method: :delete do %>
-		 <p>全削除</p>
+		 <%= t('.delete all') %>
 		 <% end %>
 
 		 <% if @notifications.exists? %>
 		 <% notifications = @notifications.where.not(visitor_id: current_user.id) %>
 		  <%= render @notifications %>
 		 <% else %>
-		  <p>通知はありません</p>
+		  <%= t('.There is no notification') %>
 		 <% end %>
 	</div>
 </div>

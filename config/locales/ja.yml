@@ -1,0 +1,83 @@
+ja:
+ users:
+  show: &user_common
+     follower: "フォロワー"
+     follow: "フォロー"
+     edit: "編集"
+     Bookmark: "本棚"
+     username: "ユーザ名"
+     show: "詳細"
+     unfollow: "フォローを外す"
+  index_follow:
+      <<: *user_common
+  index_follower:
+      <<: *user_common
+  follow:
+      <<: *user_common
+  unfollow:
+      <<: *user_common
+  edit:
+     Editing Profile: "プロフィール変更"
+     username: "ユーザ名"
+     caption: "キャプション"
+     profile image: "プロフィール画像"
+     update: "更新"
+     withdraw: "退会する"
+  withdraw:
+     Are you sure?: "本当に退会しますか？"
+     If you are withdraw, you lose all date: "退会すれば、すべてのデータは削除されます"
+     Not withdraw: "退会しない"
+     Withdraw: "退会する"
+ layouts:
+  application:
+     Top: "トップページ"
+     Notice: "通知"
+     Trend: "トレンド"
+     News: "お知らせ"
+     Mypage: "マイページ"
+     Logout: "ログアウト"
+     About: "アバウト"
+     SignUp: "新規登録"
+     Login: "ログイン"
+ homes:
+   about:
+     What is MangaMarks?: "MangaMarksとは"
+     For all the people loving manga: "漫画好きのひとたちのためのアプリです"
+     function: "このアプリでできること"
+     record: "登録機能"
+     when you read manga, you record it: "お気に入りの漫画を本棚に登録できます"
+     reviews: "レビュー機能"
+     you can review favorite manga: "お気に入りの漫画のレビューを投稿できます"
+     follow: "フォロー機能"
+     following favorite user: "お気に入りのユーザをフォローできます"
+     search: "検索機能"
+     search concern manga: "気になる漫画を検索できます"
+ comics:
+   show:
+     title: "タイトル"
+     author: "作者"
+     publisher: "出版社"
+     outline: "内容"
+     total: "評価"
+     Comment: "コメント"
+   index:
+     trend: "トレンド"
+     Destroy: "削除"
+ comment:
+   index:
+     Destroy: "削除"
+ informations:
+   index:
+     News: "お知らせ"
+     date: "日時"
+     title: "タイトル"
+ notifications:
+   index:
+     notification: "通知"
+     delete all: "全削除"
+     There is no notification: "通知はありません"
+   notification:
+     followed: "さんがあなたをフォローしました"
+ searches:
+   search:
+     search for: "検索結果:"

@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   patch '/admins/informations/:id/edit' => 'admins/informations#update'
 
  #ユーザ側
+  scope '(:locale)' do
   root 'homes#top'
   get 'homes/top'
   get 'homes/about'
@@ -51,6 +52,7 @@ Rails.application.routes.draw do
 
   #検索
   get '/search' => 'searches#search'
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
