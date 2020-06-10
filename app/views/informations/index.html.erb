@@ -1,11 +1,6 @@
 <div class="container">
 	<div class="row">
 	 <h1><%= t('.News') %></h1>
-	 <% @informations.each do |information| %>
-	   <% information.tag_list.each do |tag| %>
-	   <%= link_to tag, informations_path(tag_name: tag) %>
-	   <% end %>
-	 <% end %>
 	   <table class="table">
 	   	<thead>
 	   		<tr>
@@ -16,13 +11,11 @@
 	   	</thead>
 	   	<tbody>
 	      <% @informations.each do |information| %>
-	        <% information.tag_list.each do |tag| %>
 	   		<tr>
 	            <td><%= information.created_at.strftime('%Y/%m/%d') %></td>
 	   			<td><%= link_to information.title, information_path(information.id) %></td>
-	   			<td><%= tag %></td>
+	   			<td><%= render 'informations/tag_list', tag_list: information.tag_list %></td>
 	        </tr>
-	        <% end %>
 	       <% end %>
 		    </tbody>
 	   </table>

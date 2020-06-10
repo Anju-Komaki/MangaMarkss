@@ -40,6 +40,9 @@ ja:
      SignUp: "新規登録"
      Login: "ログイン"
  homes:
+   top:
+     Ranking: "ランキング"
+     Informations: "お知らせ"
    about:
      What is MangaMarks?: "MangaMarksとは"
      For all the people loving manga: "漫画好きのひとたちのためのアプリです"
