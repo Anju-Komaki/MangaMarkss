@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   patch '/admins/informations/:id/edit' => 'admins/informations#update'
 
  #ユーザ側
-  scope '(:locale)' do
+  scope '(:locale)',locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
   root 'homes#top'
   get 'homes/top'
   get 'homes/about'

@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 	<h1>漫画詳細</h1>
-	<%= attachment_image_tag @comic,:comic_image, :fill, 100, 100, format: 'jpeg' %><br>
+	<%= attachment_image_tag @comic,:comic_image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg" %><br>
 	<%= t('.title') %>:<%= @comic.title %>/<%= @comic.title_en %><br>
 	<%= t('.author') %>:<%= @comic.author %>/<%= @comic.author_en %><br>
 	<%= t('.publisher') %>:<%= @comic.publisher %>/<%= @comic.publisher_en %><br>
@@ -20,7 +20,7 @@
 	    <%= render 'comments/form' %>
 	<!--コメント一覧-->
 	<div class="comment_<%= @comic.id %>">
-		<%= render 'comments/index', comments: @comic_comments %>
+		<%= render 'comments/index' %>
 	</div>
 	</div>
 </div>

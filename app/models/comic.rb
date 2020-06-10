@@ -18,10 +18,10 @@ class Comic < ApplicationRecord
 	validates :isbn_code, presence: true
 	validates :title, presence: true
 	validates :author, presence: true
-	validates :publiser, presence: true
+	validates :publisher, presence: true
 	validates :title_en, presence: true
 	validates :author_en, presence: true
-	validates :publiser_en, presence: true
+	validates :publisher_en, presence: true
 	validates :body, presence: true
 	validates :tag_list, presence: true
 end
