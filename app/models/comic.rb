@@ -9,9 +9,14 @@ class Comic < ApplicationRecord
 	belongs_to :user, optional: true
 	has_many :comments, dependent: :destroy
 	has_many :bookmarks, dependent: :destroy
+	has_many :clips, dependent: :destroy
 
 	def bookmarked_by?(user)
 		bookmarks.where(user_id: user.id).exists?
+	end
+
+	def cliped_by?(user)
+		clips.where(user_id: user.id).exists?
 	end
 
 	#validation

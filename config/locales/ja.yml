@@ -66,6 +66,8 @@ ja:
    index:
      trend: "トレンド"
      Destroy: "削除"
+   ranking:
+     all: "全ての作品"
  comment:
    index:
      Destroy: "削除"

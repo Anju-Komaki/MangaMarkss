@@ -1,0 +1,5 @@
+if (location.pathname == '/comics') {
+  $(".clip_<%= @comic.id %>").html("<%= j(render 'clips/clip',  comic: @comic ) %>")
+} else {
+  $(".clip_<%= @comic.id %>").html("<%= j(render 'clips/clip',  comic: @comic ) %>")
+}

@@ -1,0 +1,9 @@
+ <% if comic.cliped_by?(current_user) %>
+   <%= link_to comic_clip_path(comic), method: :delete do %>
+   ♥<%= comic.clips.count %>
+   <% end %>
+ <% else %>
+   <%= link_to comic_clips_path(comic), method: :post do %>
+   ♡<%= comic.clips.count %>
+   <% end %>
+ <% end %>

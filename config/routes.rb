@@ -38,12 +38,14 @@ Rails.application.routes.draw do
   end
   resources :relationships, only:[:create, :destroy]
   resources :comics, only:[:index, :show, :update] do
+    resources :clips, only:[:create, :destroy]
     resources :comments, only:[:create, :destroy]
     resources :bookmarks, only:[:create, :destroy]
   end
   resources :notifications, only:[:index]
   delete 'notifications/destroy_all' => 'notifications#destroy_all'
   resources :informations, only:[:index, :show]
+  get 'comics/ranking' => 'comics#ranking', as: 'ranking'
 
   #退会処理(論理削除)のルーティング
   put 'hide' => 'users#hide'
