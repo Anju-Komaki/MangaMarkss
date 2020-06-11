@@ -7,7 +7,7 @@
 	      <%= attachment_image_tag comic,:comic_image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg" %>
 	     <% end %><br>
 	     <%= comic.title %><br>
-	     <%= render 'comics/tag_list', tag_list: comic.tag_list %>
+	     <!--<%= render 'comics/tag_list', tag_list: comic.tag_list %>-->
 	      ★ <%= comic.bookmarks.count %>
 	      C <%= comic.comments.count %><br>
 	      <% end %>

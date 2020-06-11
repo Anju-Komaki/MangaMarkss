@@ -7,7 +7,7 @@
 	<%= t('.publisher') %>:<%= @comic.publisher %>/<%= @comic.publisher_en %><br>
 	<%= t('.ISBN') %>:<%= @comic.isbn_code %><br>
 	<%= t('.outline') %>:<%= @comic.body %><br>
-	<%= @comic.tag_list.map { |tag| "##{tag}" }.join(' ') %><br>
+	<!--<%= @comic.tag_list.map { |tag| "##{tag}" }.join(' ') %>--><br>
 	<div id="star-rate-<%= @comment.id %>">
 		<%= t('.total') %>:
 		<%= @comic.comments.average(:rate).to_f.round(1) %>

@@ -3,9 +3,9 @@ class Admins::InformationsController < ApplicationController
 
 	def index
 		@informations = Information.all
-		if params[:tag_name]
-			@informations = Information.tagged_with("#{params[:tag_name]}")
-		end
+		#if params[:tag_name]
+			#@informations = Information.tagged_with("#{params[:tag_name]}")
+		#end
 	end
 
 	def show
