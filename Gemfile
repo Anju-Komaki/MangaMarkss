@@ -86,3 +86,7 @@ gem 'groupdate'
 #other
 gem 'rubocop-airbnb'
 gem 'pry-byebug'
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
