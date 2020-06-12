@@ -1,13 +1,19 @@
 <div class="container">
 	<div class="row">
 	  <h1><%= t('.trend') %></h1><br>
+	  <%= form_tag comics_path, method: :get do %>
+	   <%= select_tag :tag_id,
+	                    options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
+	                    { prompt: 'タグで絞り込み検索',
+	                      onchange: 'submit(this.form);'}
+	    %>
+      <% end %>
 	   <!--作品一覧-->
 	   	<% @comics.each do |comic| %>
 	     <%= link_to comic_path(comic.id) do %>
 	      <%= attachment_image_tag comic,:comic_image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg" %>
 	     <% end %><br>
 	     <%= comic.title %><br>
-	     <!--<%= render 'comics/tag_list', tag_list: comic.tag_list %>-->
 	      ★ <%= comic.bookmarks.count %>
 	      C <%= comic.comments.count %><br>
 	      <% end %>

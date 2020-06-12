@@ -1,0 +1,12 @@
+<div class="container">
+	<div class="row">
+	 <h1>タグ一覧</h1>
+	<%= render 'new' %><br>
+	<% @tags.each do |tag| %>
+	<%= tag.id %>
+	<%= tag.name %>
+	<%= link_to 'edit', edit_admins_tag_path(tag.id) %>
+	<%= link_to 'destroy', admins_tag_path(tag.id), method: :delete %><br>
+	<% end %>
+    </div>
+</div>

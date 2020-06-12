@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'tags/index'
+  get 'tags/new'
+  get 'tags/create'
+  get 'tags/edit'
+  get 'tags/update'
+  get 'tags/destroy'
   devise_for :admins,controllers: {
   sessions:      'admins/sessions',
   passwords:     'admins/passwords',
@@ -12,6 +18,7 @@ Rails.application.routes.draw do
 
   #管理者側
   namespace :admins do
+    resources :tags, only:[:index,:new,:create,:edit,:update,:destroy]
     resources :comics, only:[:index, :show, :new, :create, :edit, :update, :destroy]
     resources :informations, only:[:index, :show, :new, :create, :edit, :update, :destroy]
     resources :users, only:[:index, :show] do
@@ -22,6 +29,8 @@ Rails.application.routes.draw do
   end
   post '/admins/comics/new' => 'admins/comics#create'
   patch '/admins/comics/:id/edit' => 'admins/comics#update'
+  post '/admins/tags/new' => 'admins/tags#create'
+  patch '/admins/tags/:id/edit' => 'admins/tags#update'
   post '/admins/informations/new' => 'admins/informations#create'
   patch '/admins/informations/:id/edit' => 'admins/informations#update'
 

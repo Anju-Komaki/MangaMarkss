@@ -2,14 +2,13 @@ class Comic < ApplicationRecord
 	#picture
 	attachment :comic_image
 
-	#tag
-	acts_as_taggable
-
 	#Relation
 	belongs_to :user, optional: true
 	has_many :comments, dependent: :destroy
 	has_many :bookmarks, dependent: :destroy
 	has_many :clips, dependent: :destroy
+	has_many :comic_tags, dependent: :destroy
+	has_many :tags, through: :comic_tags
 
 	def bookmarked_by?(user)
 		bookmarks.where(user_id: user.id).exists?
@@ -28,5 +27,4 @@ class Comic < ApplicationRecord
 	validates :author_en, presence: true
 	validates :publisher_en, presence: true
 	validates :body, presence: true
-	validates :tag_list, presence: true
 end

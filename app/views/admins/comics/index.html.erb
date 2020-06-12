@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 	<%= line_chart Bookmark.group(:comic_id).group_by_week(:created_at).count, width: "50%", height: "75%" %>
-	 <h1>漫画一覧</h1> <%= link_to '追加', new_admins_comic_path %><br>
+	 <h1>漫画一覧</h1> <%= link_to '新規登録', new_admins_comic_path %> <%= link_to 'タグ', admins_tags_path %><br>
 	<% @comics.each do |comic| %>
 	<%= comic.id %>
 	<%= comic.title %>

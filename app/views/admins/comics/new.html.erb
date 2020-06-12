@@ -31,7 +31,12 @@
       <p>表紙</p>
       <%= f.attachment_field :comic_image %>
       <p>タグ</p>
-      <!--<%= f.text_field :tag_list, value: @comic.tag_list.join(','), class: "form-control" %><br>-->
+      <%= f.collection_check_boxes(:tag_ids,Tag.all,:id,:name) do |tag| %>
+       <%= tag.label do %>
+        <%= tag.check_box %>
+        <%= tag.text %>
+       <% end %>
+      <% end %>
       <%= f.submit "submit", class:"btn" %>
 <% end %>
 </div>

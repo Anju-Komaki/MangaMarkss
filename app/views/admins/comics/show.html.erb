@@ -10,7 +10,9 @@
 	 <%= @comic.publisher_en %><br>
 	 <%= @comic.isbn_code %><br>
 	 <%= @comic.body %><br>
-	 <%= t('.tag') %>:<%= @comic.tag_list.map { |tag| "##{tag}" }.join(' ') %><br>
+	 <% @comic.tags.each do |tag| %>
+	  <%= tag.name %>
+	 <% end %>
      <%= link_to 'edit', edit_admins_comic_path(@comic) %>
      <%= link_to 'destroy', admins_comic_path(@comic), method: :delete %>
     </div>
