@@ -55,6 +55,7 @@ Rails.application.routes.draw do
   delete 'notifications/destroy_all' => 'notifications#destroy_all'
   resources :informations, only:[:index, :show]
   get 'comics/ranking' => 'comics#ranking', as: 'ranking'
+  get 'users/:id/clip_index' => 'clips#clip_index', as: 'clip_index'
 
   #退会処理(論理削除)のルーティング
   put 'hide' => 'users#hide'

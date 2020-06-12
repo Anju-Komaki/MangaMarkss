@@ -1,32 +1,13 @@
 <div class="container">
 	<div class="row">
-		<%= attachment_image_tag @user,:profile_image, :fill, 40, 40, format: 'jpeg',fallback: "no_image_icon.jpg" %>
-		<h3><%= @user.username %></h3><br>
-		<%= @user.caption %>
-                <% if @user == current_user %>
-		<%= link_to t('.edit'), edit_user_path(@user) %>
-                <% end %><br>
-
-        <!--フォロー＆フォロワー-->
-        <div class="follower">
-                <% user ||= current_user %>
-        	<%= t('.follower') %>
-        	<%= link_to followers_user_path(@user) do %>
-        	 <%= @user.followers.count %>
-        	<% end %>
-        </div>
-        <div class="follow">
-        	<%= t('.follow') %>
-        	<%= link_to following_user_path(@user) do %>
-        	 <%= @user.following.count %>
-        	<% end %>
-        </div>
+                <%= render 'profile' %>
         <div>
         	<%= render 'follow_form' %>
         </div>
 
         <!--ユーザのブックマーク一覧の表示-->
         <h3><%= t('.Bookmark') %></h3>
+        <h3><%= link_to t('.Clip'), clip_index_path(@user) %></h3>
 		<% @bookmarks.each do |bookmark| %>
 		 <% comic = Comic.find(bookmark.comic_id) %>
 		 <%= link_to comic_path(comic.id) do %>

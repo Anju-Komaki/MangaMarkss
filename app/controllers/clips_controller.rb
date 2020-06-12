@@ -13,4 +13,9 @@ class ClipsController < ApplicationController
 		clip.destroy
 		redirect_to comic_path(comic)
 	end
+
+	def clip_index
+		@user = User.find(params[:id])
+		@clips = Clip.where(user_id: @user.id).all
+	end
 end
