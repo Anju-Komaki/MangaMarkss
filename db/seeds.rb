@@ -14,8 +14,7 @@ Comic.create!(
     title_en: "Do not aim the ace",
 	author_en: "Sumi Yamamoto",
 	publisher_en: "BUNEI.Inc",
-	body: "説明文",
-	tag_list: "少女漫画")
+	body: "説明文")
 
 Comic.create!(
 	title: "自滅の刃",
@@ -25,8 +24,7 @@ Comic.create!(
     title_en: "Blade of ruining oneself",
 	author_en: "Koharu Gotouge",
 	publisher_en: "BUNEI.Inc",
-	body: "説明文",
-	tag_list: "少年漫画")
+	body: "説明文")
 
 Comic.create!(
 	title: "ツーピース",
@@ -36,8 +34,7 @@ Comic.create!(
     title_en: "Two piece",
 	author_en: "Ichiro Oda",
 	publisher_en: "BUNEI.Inc",
-	body: "説明文",
-	tag_list: "少年漫画")
+	body: "説明文")
 
 Comic.create!(
 	title: "地球兄弟",
@@ -47,8 +44,7 @@ Comic.create!(
     title_en: "Brother earth",
 	author_en: "Tyuya Chiyama",
 	publisher_en: "NOUDAN.Inc",
-	body: "説明文",
-	tag_list: "青年漫画")
+	body: "説明文")
 
 Comic.create!(
 	title: "君へ届く",
@@ -58,8 +54,7 @@ Comic.create!(
     title_en: "To you",
 	author_en: "Kaho Shiina",
 	publisher_en: "BUNEI.Inc",
-	body: "説明文",
-	tag_list: "少女漫画")
+	body: "説明文")
 
 Comic.create!(
 	title: "しのぶれど",
@@ -69,8 +64,7 @@ Comic.create!(
     title_en: "Shinoburedo",
 	author_en: "Yui Suetugu",
 	publisher_en: "NOUDAN.Inc",
-	body: "説明文",
-	tag_list: "少女漫画")
+	body: "説明文")
 
 Comic.create!(
 	title: "Orange Fish",
@@ -80,8 +74,7 @@ Comic.create!(
     title_en: "Orange Fish",
 	author_en: "Aki Yoshida",
 	publisher_en: "TYUGAKUKAN.Inc",
-	body: "説明文",
-	tag_list: "少女漫画")
+	body: "説明文")
 
 Comic.create!(
 	title: "ベルサイユの桜",
@@ -91,8 +84,7 @@ Comic.create!(
     title_en: "Sakura of Versailles",
 	author_en: "Yoriko Ikeda",
 	publisher_en: "BUNEI.Inc",
-	body: "説明文",
-	tag_list: "少女漫画")
+	body: "説明文")
 
 Comic.create!(
 	title: "ミステリーと説くことなかれ",
@@ -102,8 +94,7 @@ Comic.create!(
     title_en: "Do not explain mystery",
 	author_en: "Yuki Tamura",
 	publisher_en: "TYUGAKUKAN.Inc",
-	body: "説明文",
-	tag_list: "少女漫画")
+	body: "説明文")
 
 Comic.create!(
 	title: "明日なに食べる？",
@@ -113,5 +104,4 @@ Comic.create!(
     title_en: "Will you eat tomorrow",
 	author_en: "Mifu Nagayoshi",
 	publisher_en: "NOUDAN.Inc",
-	body: "説明文",
-	tag_list: "青年漫画")
+	body: "説明文")

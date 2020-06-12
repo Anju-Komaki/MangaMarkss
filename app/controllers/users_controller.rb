@@ -23,9 +23,11 @@ class UsersController < ApplicationController
 
     #退会ページの表示
 	def withdraw
+		@user = User.find(params[:id])
 	end
 	#退会(論理削除)の処理
 	def hide
+		@user = User.find(params[:id])
 		current_user.update(is_valid: false)
 		reset_session
 		flash[:notice] = "ありがとうございました。またのご利用をお待ちしております。"
@@ -47,6 +49,6 @@ class UsersController < ApplicationController
 
 	private
 	def user_params
-		params.require(:user).permit(:is_valid, :username, :caption, :profile_image)
+		params.require(:user).permit(:is_valid, :username, :caption, :profile_image, :country, :email)
 	end
 end

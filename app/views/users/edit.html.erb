@@ -10,7 +10,7 @@
 		   <label><%= t('.profile image') %></label>
 		   <%= f.attachment_field :profile_image %>
 		   <%= f.submit 'update', class: "btn btn-primary" %>
-		   <%= link_to t('.withdraw'), withdraw_path, class: "btn btn-danger" %>
+		   <%= link_to t('.withdraw'), withdraw_path(current_user), class: "btn btn-danger" %>
 		 <% end %>
 	</div>
 </div>

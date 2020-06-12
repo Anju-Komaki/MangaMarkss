@@ -16,7 +16,6 @@
 	   		<tr>
 	            <td><%= information.created_at.strftime('%Y/%m/%d') %></td>
 	   			<td><%= information.title %></td>
-	   			<td><!--<%= link_to tag, admins_informations_path(tag_name: tag) %>--></td>
 	   			<td><%= link_to 'show', admins_information_path(information.id) %></td>
 	   			<td><%= link_to 'edit', edit_admins_information_path(information.id) %></td>
 	   			<td><%= link_to 'destroy', admins_information_path(information.id), method: :delete %><td>

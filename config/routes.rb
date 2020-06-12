@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   devise_for :users,controllers: {
   sessions:      'users/sessions',
   passwords:     'users/passwords',
-  registrations: 'users/registrations'
+  registrations: 'users/registrations',
+  omniauth_callbacks: 'users/omniauth_callbacks'
 }
 
   #管理者側
@@ -21,7 +22,7 @@ Rails.application.routes.draw do
     resources :tags, only:[:index,:new,:create,:edit,:update,:destroy]
     resources :comics, only:[:index, :show, :new, :create, :edit, :update, :destroy]
     resources :informations, only:[:index, :show, :new, :create, :edit, :update, :destroy]
-    resources :users, only:[:index, :show] do
+    resources :users, only:[:index, :show, :edit, :update] do
       collection do #全体データにアクション
         get :csv_download, defaults: { format: 'csv'} #デフォルト形式をCSVに設定
       end
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
   patch '/admins/comics/:id/edit' => 'admins/comics#update'
   post '/admins/tags/new' => 'admins/tags#create'
   patch '/admins/tags/:id/edit' => 'admins/tags#update'
+  patch '/admins/users/:id/edit' => 'admins/users#update'
   post '/admins/informations/new' => 'admins/informations#create'
   patch '/admins/informations/:id/edit' => 'admins/informations#update'
 
@@ -58,9 +60,9 @@ Rails.application.routes.draw do
   get 'users/:id/clip_index' => 'clips#clip_index', as: 'clip_index'
 
   #退会処理(論理削除)のルーティング
-  put 'hide' => 'users#hide'
-  patch 'hide' => 'users#hide'
-  get 'withdraw' => 'users#withdraw'
+  put 'users/:id/hide' => 'users#hide', as: 'hide'
+  patch 'users/:id/hide' => 'users#hide'
+  get 'users/:id/withdraw' => 'users#withdraw', as: 'withdraw'
 
   #検索
   get '/search' => 'searches#search'

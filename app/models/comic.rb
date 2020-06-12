@@ -19,7 +19,7 @@ class Comic < ApplicationRecord
 	end
 
 	#validation
-	validates :isbn_code, presence: true
+	validates :isbn_code, presence: true, format: { with: /\A[0-9]+\z/ } #半角数字のみ
 	validates :title, presence: true
 	validates :author, presence: true
 	validates :publisher, presence: true

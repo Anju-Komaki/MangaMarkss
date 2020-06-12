@@ -16,7 +16,7 @@
 
   <div class="field">
     <%= f.label :country %><br />
-    <%= f.country_select :country%>
+    <%= f.country_select :country %>
   </div>
 
   <div class="field">
@@ -38,5 +38,6 @@
 <% end %>
 
 <%= render "users/shared/links" %>
+<%= link_to "googleアカウントで登録",user_google_oauth2_omniauth_authorize_path %>
  </div>
 </div>

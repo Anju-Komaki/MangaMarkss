@@ -18,7 +18,6 @@
       <p>内容</p>
       <%= f.text_area :body, class:"form-control" %><br>
       <p>タグ</p>
-      <%= f.text_field :tag_list, value: @information.tag_list.join(','), class: "form-control" %><br>
       <%= f.submit "保存", class:"btn" %>
         <% end %>
   </div>

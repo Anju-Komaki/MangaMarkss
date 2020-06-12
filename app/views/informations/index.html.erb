@@ -14,7 +14,6 @@
 	   		<tr>
 	            <td><%= information.created_at.strftime('%Y/%m/%d') %></td>
 	   			<td><%= link_to information.title, information_path(information.id) %></td>
-	   			<td><!--<%= render 'informations/tag_list', tag_list: information.tag_list %>--></td>
 	        </tr>
 	       <% end %>
 		    </tbody>

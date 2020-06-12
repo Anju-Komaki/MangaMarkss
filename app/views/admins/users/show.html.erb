@@ -1,6 +1,7 @@
 <div class="container">
  <div class="row">
    <!--ユーザ情報-->
+   <%= link_to '変更', edit_admins_user_path(@user.id) %>
    <table class="table table-bordered">
 		 <tr>
 		 	 <td>登録日</td>
@@ -17,6 +18,15 @@
 		 <tr>
 		 	 <td>出身国</td>
 			 <td><%= @user.country %></td>
+		 </tr>
+		 <tr>
+		 	 <td>会員ステータス</td>
+			 <td><% if @user.is_valid == true %>
+			 	 <%= "有効会員" %>
+			 	 <% else %>
+			 	 <%= "退会済み" %>
+			 	 <% end %>
+			 </td>
 		 </tr>
   </table>
  </div>

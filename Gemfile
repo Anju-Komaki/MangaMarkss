@@ -69,6 +69,8 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'country_select', require: 'country_select_without_sort_alphabetical'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
 
 #upload image
 gem "refile", require: "refile/rails", github: 'manfe/refile'
@@ -80,7 +82,6 @@ gem 'bootstrap-sass'
 
 #admins
 gem "chartkick"
-#gem 'acts-as-taggable-on'
 gem 'groupdate'
 
 #other
