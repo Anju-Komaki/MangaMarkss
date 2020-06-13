@@ -15,8 +15,13 @@ class Admins::InformationsController < ApplicationController
 
 	def create
 		@information = Information.new(information_params)
-		@information.save
-		redirect_to admins_informations_path
+		if @information.save
+		   flash[:message] = "新規登録しました"
+		   redirect_to admins_informations_path
+		else
+			flash[:message] = "新規登録できませんでした"
+			render 'new'
+		end
 	end
 
 	def edit
@@ -25,18 +30,24 @@ class Admins::InformationsController < ApplicationController
 
 	def update
 		@information = Information.find(params[:id])
-		@information.update(information_params)
-		redirect_to admins_information_path(@information)
+		if @information.update(information_params)
+		   flash[:message] = "内容を更新しました"
+	       redirect_to admins_information_path(@information)
+	    else
+	   	  flash[:message] = "内容を更新できませんでした"
+	   	  render 'edit'
+	   	end
 	end
 
 	def destroy
 		@information = Information.find(params[:id])
 		@information.destroy
+		flash[:message] = "削除しました"
 		redirect_to admins_informations_path
 	end
 
 	private
 	def information_params
-		params.require(:information).permit(:title, :body)
+		params.require(:information).permit(:title, :body, category_ids:[])
 	end
 end

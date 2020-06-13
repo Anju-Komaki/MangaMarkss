@@ -1,10 +1,22 @@
 <div class="container">
 	<div class="row">
-     <%= link_to 'edit', edit_admins_information_path(@information) %><br>
-     <%= link_to 'destroy', admins_information_path(@information), method: :delete %><br>
-     <%= @information.created_at.strftime('%Y/%m/%d') %><br>
-	 <%= @information.title %><br>
-	 <%= @information.body %><br>
-	 tag:<%= @information.tag_list.map { |tag| "##{tag}" }.join(' ') %><br>
+	 <div class="col-xs-10">
+	 	<p style="color: #ff6347;"><%= flash[:message] %></p>
+	 	<strong style="color: #696969;" class="pull-right">
+	 		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+	    	<%= @information.created_at.strftime('%Y/%m/%d') %>
+	    </strong>
+	 	<h1><%= @information.title %></h1>
+	 	<p><%= safe_join(@information.body.split("\n"),tag(:br)) %></p>
+	 	<% @information.categories.each do |category| %>
+	  	<span class="tag"><%= category.name %></span>
+	 	<% end %>
+	 </div>
+	<div class="row">
+	 <div class="col-xs-10 col-xs-offset-3">
+	 	<%= link_to 'edit', edit_admins_information_path(@information), class: "btn btn-success col-xs-1" %>
+     	<%= link_to 'destroy', admins_information_path(@information), method: :delete, class: "btn btn-danger col-xs-1", "data-confirm" => "本当に削除しますか？" %>
+     </div>
+    </div>
 	</div>
 </div>

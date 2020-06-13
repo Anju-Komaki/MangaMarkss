@@ -12,8 +12,13 @@ class Admins::TagsController < ApplicationController
 
   def create
     @tag = Tag.new(tag_params)
-    @tag.save!
-    redirect_to admins_tags_path
+    if @tag.save
+      flash[:message] = "タグ名を登録しました"
+      redirect_to admins_tags_path
+    else
+      flash[:message] = "タグ名を登録できませんでした"
+      redirect_to admins_tags_path
+    end
   end
 
   def edit
@@ -22,13 +27,19 @@ class Admins::TagsController < ApplicationController
 
   def update
     @tag = Tag.find(params[:id])
-    @tag.update(tag_params)
-    redirect_to admins_tags_path
+    if @tag.update(tag_params)
+       flash[:message] = "タグ名を変更しました"
+       redirect_to admins_tags_path
+    else
+       flash[:message] = "タグ名を変更できませんでした"
+       render 'edit'
+    end
   end
 
   def destroy
     @tag = Tag.find(params[:id])
     @tag.destroy
+    flash[:message] = "タグを削除しました"
     redirect_to admins_tags_path
   end
 

@@ -1,12 +1,17 @@
 <div class="container">
 	<div class="row">
-	 <h1>タグ一覧</h1>
-	<%= render 'new' %><br>
-	<% @tags.each do |tag| %>
-	<%= tag.id %>
-	<%= tag.name %>
-	<%= link_to 'edit', edit_admins_tag_path(tag.id) %>
-	<%= link_to 'destroy', admins_tag_path(tag.id), method: :delete %><br>
-	<% end %>
+	 <h1><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>タグ一覧</h1>
+	 	<p style="color: #ff6347;"><%= flash[:message] %></p>
+		<%= render 'new' %><br>
+	<table class="table table-bordered">
+	 <% @tags.each do |tag| %>
+		<tr>
+	    	<td><%= tag.id %></td>
+			<td><%= tag.name %></td>
+			<td><%= link_to 'edit', edit_admins_tag_path(tag.id) %></td>
+			<td><%= link_to 'destroy', admins_tag_path(tag.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+		</tr>
+	 <% end %>
+    </table>
     </div>
 </div>

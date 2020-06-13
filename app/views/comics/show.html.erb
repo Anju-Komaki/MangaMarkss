@@ -6,7 +6,7 @@
 	<%= t('.author') %>:<%= @comic.author %>/<%= @comic.author_en %><br>
 	<%= t('.publisher') %>:<%= @comic.publisher %>/<%= @comic.publisher_en %><br>
 	<%= t('.ISBN') %>:<%= @comic.isbn_code %><br>
-	<%= t('.outline') %>:<%= @comic.body %><br>
+	<%= t('.outline') %>:<%= safe_join(@comic.body.split("\n"),tag(:br)) %><br>
     <% @comic.tags.each do |tag| %>
 	  <%= tag.name %>
 	<% end %>

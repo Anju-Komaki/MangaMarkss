@@ -1,19 +1,43 @@
 <div class="container">
 	<div class="row">
-	 <h1>漫画詳細</h1>
-	 <%= attachment_image_tag @comic,:comic_image, :fill, 100, 100, format: 'jpeg' %><br>
-	 <%= @comic.title %><br>
-	 <%= @comic.title_en %><br>
-	 <%= @comic.author %><br>
-	 <%= @comic.author_en %><br>
-	 <%= @comic.publisher %><br>
-	 <%= @comic.publisher_en %><br>
-	 <%= @comic.isbn_code %><br>
-	 <%= @comic.body %><br>
-	 <% @comic.tags.each do |tag| %>
-	  <%= tag.name %>
-	 <% end %>
-     <%= link_to 'edit', edit_admins_comic_path(@comic) %>
-     <%= link_to 'destroy', admins_comic_path(@comic), method: :delete %>
+	 	<h1>詳細</h1>
+	 	<p style="color: #ff6347;"><%= flash[:message] %></p>
+	   <div class="col-xs-10 center-block">
+	 	<div class="col-xs-5">
+	 		<%= attachment_image_tag @comic,:comic_image, :fill, 200, 250, format: 'jpeg' %>
+	 		<br>
+    		<%= link_to '編集', edit_admins_comic_path(@comic), class: "btn btn-success col-xs-3" %>
+     		<%= link_to '削除', admins_comic_path(@comic), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger col-xs-3" %>
+	 	</div>
+	 	<div class="col-xs-5">
+	 		<table class="table table-bordered">
+	 			<tr>
+	 				<td>ISBNコード</td>
+	 		    	<td><%= @comic.isbn_code %></td>
+	 	    	</tr>
+	 			<tr>
+	 				<td>タイトル</td>
+	 		    	<td><%= @comic.title %>/<%= @comic.title_en %></td>
+	 			</tr>
+	 			<tr>
+	 				<td>作者</td>
+	            	<td><%= @comic.author %>/<%= @comic.author_en %></td>
+	 			</tr>
+	 			<tr>
+	 				<td>出版社</td>
+	 				<td><%= @comic.publisher %>/<%= @comic.publisher_en %></td>
+	        	</tr>
+	        	<tr>
+	        		<td>概要</td>
+	            	<td><%= safe_join(@comic.body.split("\n"),tag(:br)) %></td>
+	        	</tr>
+	    	</table>
+	 		<% @comic.tags.each do |tag| %>
+	  			<span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+	  			<span class="tag"><%= tag.name %></span>
+	 		<% end %>
+	 	</div>
+     	</div>
+ 		</div>
     </div>
 </div>

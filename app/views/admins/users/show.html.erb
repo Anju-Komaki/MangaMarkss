@@ -1,7 +1,12 @@
 <div class="container">
  <div class="row">
    <!--ユーザ情報-->
-   <%= link_to '変更', edit_admins_user_path(@user.id) %>
+   <h2><%= @user.username %>さんの情報</h2>
+   <p style="color: #ff6347;"><%= flash[:message] %></p>
+   <div class="col-xs-2 col-xs-offset-8">
+   <%= link_to '登録情報変更', edit_admins_user_path(@user.id), class: "glyphicon glyphicon-edit" %>
+   </div>
+   <div class="col-xs-10">
    <table class="table table-bordered">
 		 <tr>
 		 	 <td>登録日</td>
@@ -22,12 +27,13 @@
 		 <tr>
 		 	 <td>会員ステータス</td>
 			 <td><% if @user.is_valid == true %>
-			 	 <%= "有効会員" %>
+			 	 <span class="status"><%= "有効会員" %></span>
 			 	 <% else %>
 			 	 <%= "退会済み" %>
 			 	 <% end %>
 			 </td>
 		 </tr>
   </table>
+  </div>
  </div>
 </div>

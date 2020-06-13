@@ -1,15 +1,15 @@
 <div class="container">
   <div class="row">
-      <h2 class="form-header-title"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>タグ編集</h2>
+      <h2 class="form-header-title">カテゴリー編集</h2>
        <p style="color: #ff6347;"><%= flash[:message] %></p>
-        <%= form_for(@tag, url: edit_admins_tag_path) do |f| %>
+        <%= form_for(@category, url: edit_admins_category_path) do |f| %>
           <div class="form-group">
             <div class="col-xs-2">
-              <%= f.text_field :name, class: "form-control", placeholder: "タグ入力" %>
+              <%= f.text_field :name, class: "form-control", placeholder: "カテゴリー入力" %>
             </div>
               <%= f.submit "submit", class: "btn btn-primary mb-2" %>
           </div>
         <% end %>
-    </div>
   </div>
 </div>
+

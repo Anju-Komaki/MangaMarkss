@@ -15,9 +15,11 @@ class Admins::ComicsController < ApplicationController
 
 	def create
 		@comic = Comic.new(comic_params)
-		if @comic.save!
-		    redirect_to admins_comics_path
+		if @comic.save
+		   flash[:message] = "新規登録しました"
+		   redirect_to admins_comics_path
 		else
+			flash[:message] = "新規登録できませんでした"
 			render 'new'
 		end
 	end
@@ -28,13 +30,19 @@ class Admins::ComicsController < ApplicationController
 
 	def update
 		@comic = Comic.find(params[:id])
-		@comic.update(comic_params)
-		redirect_to admins_comic_path(@comic)
+		if @comic.update(comic_params)
+		   flash[:message] = "情報を更新しました"
+		   redirect_to admins_comic_path(@comic)
+		else
+			flash[:message] = "情報を更新できませんでした"
+			render 'edit'
+		end
 	end
 
 	def destroy
 		@comic = Comic.find(params[:id])
 		@comic.destroy
+		flash[:message] = "削除しました"
 		redirect_to admins_comics_path
 	end
 

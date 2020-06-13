@@ -1,0 +1,17 @@
+<div class="container">
+	<div class="row">
+	 <h1>カテゴリー一覧</h1>
+	  <p style="color: #ff6347;"><%= flash[:message] %></p>
+	  <%= render 'new' %><br>
+	<table class="table table-bordered">
+	<% @categories.each do |category| %>
+		<tr>
+	    	<td><%= category.id %></td>
+			<td><%= category.name %></td>
+			<td><%= link_to 'edit', edit_admins_category_path(category.id) %></td>
+			<td><%= link_to 'destroy', admins_category_path(category.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+		</tr>
+	<% end %>
+    </table>
+    </div>
+</div>
