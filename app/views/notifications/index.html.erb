@@ -2,9 +2,11 @@
 	<div class="row">
 		<h1><%= t('.notification')%></h1>
 		 <%= link_to notifications_destroy_all_path, method: :delete do %>
-		 <%= t('.delete all') %>
+		 <span class="glyphicon glyphicon-trash" aria-hidden="true">
+		 	<%= t('.delete all') %>
+		 </span>
 		 <% end %>
-
+		 <br>
 		 <% if @notifications.exists? %>
 		 <% notifications = @notifications.where.not(visitor_id: current_user.id) %>
 		  <%= render @notifications %>

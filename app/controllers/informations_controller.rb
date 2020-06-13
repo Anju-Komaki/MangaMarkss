@@ -1,6 +1,10 @@
 class InformationsController < ApplicationController
 	def index
-		@informations = Information.all
+		if	@informations = params[:category_id].present?
+			@informations = Category.find(params[:category_id]).informations
+		else
+			@informations = Information.all
+		end
 	end
 
 	def show

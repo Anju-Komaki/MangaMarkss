@@ -1,6 +1,7 @@
 <div class="container">
 	<div class="row">
 		<h2><%= t('.Editing Profile') %></h2>
+		<p style="color: #ff6347;"><%= flash[:message] %></p>
 		 <%= form_for(@user) do |f| %>
      	  <div class="form-row">
             <div class="form-group">

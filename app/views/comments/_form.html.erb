@@ -4,8 +4,10 @@
             <div id="star">
                 <%= f.hidden_field :rate, id: :review_star %>
             </div>
-                <%= f.text_area :comment, class: "input-mysize"  %>
-                <%= f.submit 'submit', class: "btn btn-primary" %>
+            <div class="form-group">
+                <%= f.text_area :comment, class: "form-control"  %>
+                <%= f.submit 'submit', class: "btn btn-primary pull-right col-xs-4" %>
+            </div>
           <% end %>
         <% end %>
 </div>

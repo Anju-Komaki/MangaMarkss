@@ -4,7 +4,8 @@ ja:
      follower: "フォロワー"
      follow: "フォロー"
      edit: "編集"
-     Bookmark: "本棚"
+     Bookmark: "ブックマーク"
+     Clips: "気になるリスト"
      username: "ユーザ名"
      show: "詳細"
      unfollow: "フォローを外す"
@@ -66,8 +67,10 @@ ja:
    index:
      trend: "トレンド"
      Destroy: "削除"
-   ranking:
-     all: "全ての作品"
+     All: "全ての作品"
+   rank:
+     All: "全ての作品"
+     trend: "トレンド"
  comment:
    index:
      Destroy: "削除"
@@ -86,3 +89,7 @@ ja:
  searches:
    search:
      search for: "検索結果:"
+ clips:
+   clip_index:
+     Bookmark: "ブックマーク"
+     Clips: "気になるリスト"

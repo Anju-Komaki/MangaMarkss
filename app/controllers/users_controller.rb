@@ -14,9 +14,10 @@ class UsersController < ApplicationController
 	def update
 		@user = User.find(params[:id])
 		if @user.update(user_params)
-		   flash[:update] = "プロフィールを更新しました"
+		   flash[:message] = "プロフィールを更新しました"
 		   redirect_to user_path(@user)
 		else
+		   flash[:message] = "プロフィールを更新できませんでした"
 		   render :edit
 		end
 	end
@@ -30,7 +31,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		current_user.update(is_valid: false)
 		reset_session
-		flash[:notice] = "ありがとうございました。またのご利用をお待ちしております。"
+		flash[:message] = "ありがとうございました。またのご利用をお待ちしております。"
 		redirect_to root_path
 	end
 

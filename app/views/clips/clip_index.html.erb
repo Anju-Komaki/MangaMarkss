@@ -8,9 +8,9 @@
         <!--ユーザのブックマーク一覧の表示-->
         <ul class="nav nav-tabs">
         	<li class="nav-item">
-        			<%= link_to t('.Bookmark'), user_path(@user), class: "glyphicon glyphicon-book active"%>
+        			<%= link_to t('.Bookmark'), user_path(@user), class: "glyphicon glyphicon-book"%>
         	</li>
-            <li class="nav-item">
+            <li class="nav-item active">
             		<%= link_to t('.Clips'), clip_index_path(@user), class: "glyphicon glyphicon-eye-open nav-link" %>
             </li>
         </ul>

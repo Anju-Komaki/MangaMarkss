@@ -1,15 +1,25 @@
+<!--コメント一覧：部分テンプレート-->
+<div class="comment-index">
  <% @comic.comments.each do |comment| %>
 
   <div id="comic_comment-<%= comment.id %>">
-   <%= link_to user_path(comment.user) do %>
-    <%= comment.user.username %>
-   <% end %>
-    <%= comment.created_at.strftime('%Y/%m/%d') %><br>
-   -<%= comment.comment %><br>
-
-   <% unless current_user != comment.user %>
-    <%= link_to t('.Destroy'), comic_comment_path(comment.id), method: :delete, class: "btn btn-danger" %>
-  <% end %>
+    <div class="col-xs-3">
+    <%= attachment_image_tag comment.user,:profile_image, :fill, 40, 40, format: 'jpeg',fallback: "no_image_icon.jpg", class: "img-rounded" %>
+    </div>
+    <div class="col-xs-9">
+      <%= link_to user_path(comment.user) do %>
+        <strong><%= comment.user.username %></strong>
+      <% end %>
+      <% unless current_user != comment.user %>
+        <%= link_to '', comic_comment_path(comment.id), method: :delete,"data-confirm" => "Are you sure？", class: "glyphicon glyphicon-trash" %>
+        <% end %>
+        <br>
+        <p class="comment-date"><%= comment.created_at.strftime('%Y/%m/%d') %></p>
+    </div>
+    <div class="col-xs-9 col-xs-offset-3">
+      <%= comment.comment %>
+    </div>
   </div>
  <% end %>
+</div>
 

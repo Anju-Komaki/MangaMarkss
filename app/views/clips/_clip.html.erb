@@ -1,9 +1,13 @@
  <% if comic.cliped_by?(current_user) %>
    <%= link_to comic_clip_path(comic), method: :delete do %>
-   ♥<%= comic.clips.count %>
+   <span class="glyphicon glyphicon-eye-open comic-clips" aria-hidden="true" style="color: #dc143c;">
+   	<%= comic.clips.count %>
+   </span>
    <% end %>
  <% else %>
    <%= link_to comic_clips_path(comic), method: :post do %>
-   ♡<%= comic.clips.count %>
+   <span class="glyphicon glyphicon-eye-open comic-clips" aria-hidden="true">
+   	<%= comic.clips.count %>
+   </span>
    <% end %>
  <% end %>
