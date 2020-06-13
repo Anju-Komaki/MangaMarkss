@@ -1,18 +1,17 @@
 <div class="container">
 	<div class="row">
-		<table class="table">
-			<thead>
-				<th><%= t('.username') %></th>
-				<th><%= t('.show') %></th>
-			</thead>
-		    <tbody>
+		<table class="table table-hover col-xs-10">
 		    <% @user.followers.each do |user| %>
 		     <tr>
+		       <td>
+		       	<%= link_to user_path(user) do %>
+		       	 <%= attachment_image_tag @user,:profile_image, :fill, 40, 40, format: 'jpeg',fallback: "no_image_icon.jpg", class: "img-circle" %>
+		       	<% end %>
+		       	</td>
 		       <td><%= user.username %></td>
-		 	   <td><%= link_to t('.show'), user_path(user) %></td>
+		       <td><%= truncate(user.caption) %></td>
 		     </tr>
 		    <% end %>
-		    </tbody>
 		</table>
 	</div>
 </div>
