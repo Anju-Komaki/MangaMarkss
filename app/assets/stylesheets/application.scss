@@ -16,3 +16,85 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+
+.bg-color {
+	font-family: 'Righteous', cursive,'Kosugi', sans-serif;
+}
+
+.navbar-brand{
+	font-size: 30px;
+	font-family: 'Anton', sans-serif;
+	color: #ff6347;
+}
+
+.navbar-brand{
+	color: #ff6347;
+}
+
+.nav-size{
+	font-size: 20px;
+}
+
+a {
+	color: #000000;
+}
+
+a:hover{
+    color: #ff6347;
+    text-decoration: underline;
+}
+
+.main-visual{
+	background-color: #000000;
+	color: #ffffff;
+	width: 90%;
+	height: 250px;
+}
+
+.top-message{
+	font-size: 80px;
+	font-family: 'Anton', sans-serif;
+	padding-left: 5px;
+}
+
+.sub-message{
+	font-size: 40px;
+	font-family: 'Flamenco', cursive;
+	font-style: italic;
+	text-align: right;
+	padding-right: 30px;
+}
+
+.menu-title{
+	background-color: #333333;
+	color: #ffffff;
+	margin-left: 50px;
+}
+
+.top-menu{
+	margin-left: 50px;
+	height: 150px;
+}
+
+.menu-title2{
+	background-color: #333333;
+	color: #ffffff;
+	margin-left: 50px;
+}
+
+.top-menu2{
+	margin-left: 50px;
+}
+
+footer {
+	text-align: center;
+}
+
+#top-back {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  font-size: 50px;
+}

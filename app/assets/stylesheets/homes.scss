@@ -4,18 +4,99 @@
 
 .comic-bookmarks{
 	font-size: 16px;
-	background-color: #f5f5f5;
+	color: #696969;
 	padding: 2px;
 }
 
 .comic-clips{
 	font-size: 16px;
-	background-color: #f5f5f5;
+	color: #696969;
 	padding: 2px;
 }
 
 .comic-comments{
 	font-size: 16px;
-	background-color: #f5f5f5;
+	color: #696969;
 	padding: 2px;
+}
+
+.header-about{
+	width:80%;
+	color: #ffffff;
+	background-color: #333333;
+	margin-left: 150px;
+}
+
+.about-text{
+	font-size: 80px;
+	color: #ff6347;
+	text-align: right;
+}
+
+
+.right-headline{
+	text-align: right;
+}
+
+.right-text{
+	text-align: right;
+}
+
+
+.function-explanation{
+	text-align: center;
+	width: 100%;
+}
+
+.function-title{
+	font-size: 50px;
+}
+
+.function{
+	display: inline-block;
+	width: 20%;
+	height: 150px;
+	margin: 5px;
+}
+
+.icon-explanation{
+	background-color: #333333;
+	color: #ffffff;
+	text-align: left;
+	width: 80%;
+}
+
+.icon-headline{
+	font-size: 50px;
+	color: #ff6347;
+	margin-left: 10px;
+}
+
+.icon-text{
+	margin-left: 20px;
+	width: 20%;
+	display: inline-block;
+}
+
+.icon-image{
+	font-size: 50px;
+}
+
+.icon-subtext{
+	font-size: 25px;
+}
+
+.foot {
+	text-align: center;
+	margin-top: 100px;
+	height: 200px;
+}
+
+.foot-text{
+	font-size: 80px;
+}
+
+.foot-text-strong{
+	color: #ff6347;
+	font-size: 80px;
 }

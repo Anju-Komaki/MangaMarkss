@@ -1,11 +1,14 @@
-<div class="container">
-	<div class="row col-xs-offset-1">
+<div class="main-visual">
+	<p class="top-message">Welcome to <strong>MangaMarks</strong>!</p>
+	<p class="sub-message">For All Manga Lovers</p>
+</div>
 		<p style="color: #ff6347;"><%= flash[:message] %></p>
-		<h1><%= t('.Ranking') %></h1>
+		<h1 class="menu-title"><i class="fas fa-crown" style="color: #ff6347;"></i><%= t('.Ranking') %></h1>
+		<div class="top-menu">
 		<!--ランキングの表示：お気に入りの多い順(上位５件表示)-->
 		 <% @rankings.each.with_index(1) do |comic, i| %>
 		  <div class="col-xs-2">
-		  <h4><%= i %></h4><br>
+		  <%= i %>
 		  <strong><%= comic.title %></strong><br>
 		  <%= attachment_image_tag comic,:comic_image, :fill, 100, 150, format: 'jpeg',fallback: "no_image.jpg", size:'100x150' %>
 		  <br>
@@ -14,11 +17,12 @@
           <span class="glyphicon glyphicon-comment comic-comments" aria-hidden="true"><%= comic.comments.count %></span>
 		  </div>
 		 <% end %>
+		</div>
 		 <br>
 		 <br>
 		<!--お知らせ情報-->
-		<div class="col-xs-12">
-		 <h1><%= t('.Informations') %></h1>
+		<h1 class="menu-title2"><i class="fas fa-info-circle" style="color: #ff6347;"></i><%= t('.Informations') %></h1>
+		<div class="top-menu2">
 		 <% @informations.each do |information| %>
 		 	<h4><%= information.created_at.strftime('%Y/%m/%d') %></h4>
 		    <h5><%= information.title %></h5>
@@ -27,4 +31,3 @@
 		 <% end %>
 		</div>
 	</div>
-</div>

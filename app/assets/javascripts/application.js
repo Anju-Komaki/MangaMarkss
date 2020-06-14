@@ -19,3 +19,14 @@
 //= require chartkick
 //= require Chart.bundle
 //= require_tree .
+
+$(function() {
+ 
+  $('#top-back').on('click',function(event){
+    $('body, html').animate({
+      scrollTop:0
+    }, 800);
+    event.preventDefault();
+  });
+ 
+});
