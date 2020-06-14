@@ -3,7 +3,7 @@
         <p style="color: #ff6347;"><%= flash[:message] %></p>
 		<div class="col-xs-10 center-block">
             <%= render 'profile' %>
-        	<% if user ||= current_user %>
+        	<% unless current_user == @user %>
         	<%= render 'follow_form' %>
         	<% end %>
     	</div>
@@ -22,7 +22,7 @@
 		 <% comic = Comic.find(bookmark.comic_id) %>
 		 <div class="col-xs-2">
 		 <%= link_to comic_path(comic.id) do %>
-	      <%= attachment_image_tag bookmark.comic,:comic_image, :fill, 100, 150, format: 'jpeg',fallback: "no_image.jpg" %>
+	      <%= attachment_image_tag bookmark.comic,:comic_image, :fill, 100, 150, format: 'jpeg',fallback: "no_image.jpg", size:'100x150' %>
 	     <% end %>
 	     <br>
 		  <span class="glyphicon glyphicon-book comic-bookmarks" aria-hidden="true"><%= comic.bookmarks.count %></span>

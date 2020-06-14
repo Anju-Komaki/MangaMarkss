@@ -7,7 +7,7 @@
 		  <div class="col-xs-2">
 		  <h4><%= i %></h4><br>
 		  <strong><%= comic.title %></strong><br>
-		  <%= attachment_image_tag comic,:comic_image, :fill, 100, 150, format: 'jpeg',fallback: "no_image.jpg" %>
+		  <%= attachment_image_tag comic,:comic_image, :fill, 100, 150, format: 'jpeg',fallback: "no_image.jpg", size:'100x150' %>
 		  <br>
 		  <span class="glyphicon glyphicon-book comic-bookmarks" aria-hidden="true"><%= comic.bookmarks.count %></span>
           <span class="glyphicon glyphicon-eye-open comic-clips" aria-hidden="true"><%= comic.clips.count %></span>

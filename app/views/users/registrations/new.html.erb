@@ -38,6 +38,8 @@
 <% end %>
 
 <%= render "users/shared/links" %>
-<%= link_to "googleアカウントで登録",user_google_oauth2_omniauth_authorize_path %>
+<%= link_to user_google_oauth2_omniauth_authorize_path do %>
+<i class="fab fa-google-plus-square"></i>
+<% end %>
  </div>
 </div>

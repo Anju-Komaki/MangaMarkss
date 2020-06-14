@@ -4,7 +4,7 @@
 	 	<p style="color: #ff6347;"><%= flash[:message] %></p>
 	   <div class="col-xs-10 center-block">
 	 	<div class="col-xs-5">
-	 		<%= attachment_image_tag @comic,:comic_image, :fill, 200, 250, format: 'jpeg' %>
+	 		<%= attachment_image_tag @comic,:comic_image, :fill, 200, 250, format: 'jpeg',fallback: "no_image.jpg", size:'200x250' %>
 	 		<br>
     		<%= link_to '編集', edit_admins_comic_path(@comic), class: "btn btn-success col-xs-3" %>
      		<%= link_to '削除', admins_comic_path(@comic), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger col-xs-3" %>

@@ -3,7 +3,7 @@
 		<div class="col-xs-12 center-block">
 			<h3><%= @comic.title %>/<%= @comic.title_en %></h3>
 		<div class="col-xs-5">
-			<%= attachment_image_tag @comic,:comic_image, :fill, 200, 250, format: 'jpeg',fallback: "no_image.jpg" %>
+			<%= attachment_image_tag @comic,:comic_image, :fill, 200, 250, format: 'jpeg',fallback: "no_image.jpg", size:'200x250' %>
 			<br>
 			<%= render 'bookmarks/bookmark', comic: @comic %>
 			<%= render 'clips/clip', comic: @comic %>

@@ -4,7 +4,7 @@
 
   <div id="comic_comment-<%= comment.id %>">
     <div class="col-xs-3">
-    <%= attachment_image_tag comment.user,:profile_image, :fill, 40, 40, format: 'jpeg',fallback: "no_image_icon.jpg", class: "img-rounded" %>
+    <%= attachment_image_tag comment.user,:profile_image, :fill, 40, 40, format: 'jpeg',fallback: "no_image_icon.jpg", size:'40x40', class: "img-rounded" %>
     </div>
     <div class="col-xs-9">
       <%= link_to user_path(comment.user) do %>
