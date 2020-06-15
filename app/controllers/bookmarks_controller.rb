@@ -1,4 +1,5 @@
 class BookmarksController < ApplicationController
+    before_action :authenticate_user!
 	def create
 		comic = Comic.find(params[:comic_id])
 		bookmark = current_user.bookmarks.new(comic_id: comic.id)

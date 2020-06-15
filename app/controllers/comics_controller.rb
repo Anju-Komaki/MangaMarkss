@@ -1,4 +1,5 @@
 class ComicsController < ApplicationController
+    before_action :authenticate_user!
 	def index
 		if	@comics = params[:tag_id].present?
 			@comics = Tag.find(params[:tag_id]).comics

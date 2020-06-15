@@ -1,5 +1,5 @@
 class ClipsController < ApplicationController
-
+    before_action :authenticate_user!
 	def create
 		comic = Comic.find(params[:comic_id])
 		clip = current_user.clips.new(comic_id: comic.id)

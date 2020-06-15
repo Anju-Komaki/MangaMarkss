@@ -1,5 +1,4 @@
 class SearchesController < ApplicationController
-
 	def search
 		@column = params["search"]["column"]
 		@content = params["search"]["content"]
