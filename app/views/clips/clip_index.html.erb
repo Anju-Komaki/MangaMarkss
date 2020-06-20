@@ -2,7 +2,9 @@
 	<div class="row">
 		<div class="col-xs-10 center-block">
             <%= render 'users/profile' %>
+            <% unless current_user == @user %>
         	<%= render 'users/follow_form' %>
+            <% end %>
         </div>
         <div class="col-xs-10 center-block">
         <!--ユーザのブックマーク一覧の表示-->
@@ -19,7 +21,7 @@
 		 <% comic = Comic.find(clip.comic_id) %>
 		 <div class="col-xs-2">
 		  <%= link_to comic_path(comic.id) do %>
-	       <%= attachment_image_tag clip.comic,:comic_image, :fill, 100, 150, format: 'jpeg',fallback: "no_image.jpg" %>
+	       <%= attachment_image_tag clip.comic,:comic_image, :fill, 100, 150, format: 'jpeg',fallback: "no_image.jpg", size:'100x150' %>
 	      <% end %><br>
 		  <span class="glyphicon glyphicon-book comic-bookmarks" aria-hidden="true"><%= comic.bookmarks.count %></span>
           <span class="glyphicon glyphicon-eye-open comic-clips" aria-hidden="true"><%= comic.clips.count %></span>
