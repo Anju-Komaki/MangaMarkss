@@ -1,5 +1,6 @@
-class ApplicationController < ActionController::Base
+# frozen_string_literal: true
 
+class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   before_action :set_locale
@@ -19,7 +20,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :email, :password, :password_confirmation,:country])
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:username, :password])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[username email password password_confirmation country])
+    devise_parameter_sanitizer.permit(:sign_in, keys: %i[username password])
   end
 end

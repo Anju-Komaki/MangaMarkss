@@ -1,13 +1,15 @@
-class InformationsController < ApplicationController
-	def index
-		if	@informations = params[:category_id].present?
-			@informations = Category.find(params[:category_id]).informations
-		else
-			@informations = Information.all
-		end
-	end
+# frozen_string_literal: true
 
-	def show
-		@information = Information.find(params[:id])
-	end
+class InformationsController < ApplicationController
+  def index
+    @informations = if @informations = params[:category_id].present?
+                      Category.find(params[:category_id]).informations
+                    else
+                      Information.all
+                    end
+  end
+
+  def show
+    @information = Information.find(params[:id])
+  end
 end

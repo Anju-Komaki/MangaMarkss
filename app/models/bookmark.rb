@@ -1,4 +1,6 @@
+# frozen_string_literal: true
+
 class Bookmark < ApplicationRecord
-	belongs_to :user
-	belongs_to :comic
+  belongs_to :user
+  belongs_to :comic
 end

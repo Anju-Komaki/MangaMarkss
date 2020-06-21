@@ -1,33 +1,35 @@
 <div class="container">
   <div class="row">
-    <h2><%= t('.Log in') %></h2>
+    <h2 class="col-xs-4 col-xs-offset-3"><%= t('.Login') %></h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="field">
+      <div class="field  col-xs-4 col-xs-offset-3">
         <%= f.label :username %><br />
-        <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+        <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "form-control" %>
       </div>
 
-      <div class="field">
+      <div class="field  col-xs-4 col-xs-offset-3">
         <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "current-password" %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
-        <div class="field">
+        <div class="field  col-xs-4 col-xs-offset-3">
           <%= f.check_box :remember_me %>
           <%= f.label :remember_me %>
         </div>
       <% end %>
 
-      <div class="actions">
-        <%= f.submit "Log in" %>
+      <div class="actions  col-xs-4 col-xs-offset-3">
+        <%= f.submit "Log in", class: "btn btn-primary" %>
       </div>
       <% end %>
 
-<%= render "users/shared/links" %>
-<%= link_to user_google_oauth2_omniauth_authorize_path do %>
-<i class="fab fa-google-plus-square"></i>
-<% end %>
+  <div class="col-xs-4 col-xs-offset-3">
+    <%= render "users/shared/links" %>
+    <%= link_to user_google_oauth2_omniauth_authorize_path do %>
+    <i class="fab fa-google-plus-square"></i>
+    <% end %>
+  </div>
   </div>
 </div>

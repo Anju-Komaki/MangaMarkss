@@ -20,13 +20,14 @@
 //= require Chart.bundle
 //= require_tree .
 
+//topに遷移
 $(function() {
- 
+
   $('#top-back').on('click',function(event){
     $('body, html').animate({
       scrollTop:0
     }, 800);
     event.preventDefault();
   });
- 
+
 });

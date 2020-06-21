@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -38,17 +40,17 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capistrano'
   gem 'capistrano-rails'
-  gem 'capistrano3-puma'
   gem 'capistrano-rbenv'
+  gem 'capistrano3-puma'
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -60,38 +62,38 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'rspec-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-#users
+# users
+gem 'country_select', require: 'country_select_without_sort_alphabetical'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-gem 'country_select', require: 'country_select_without_sort_alphabetical'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 
-#upload image
-gem "refile", require: "refile/rails", github: 'manfe/refile'
-gem "refile-mini_magick"
+# upload image
+gem 'refile', require: 'refile/rails', github: 'manfe/refile'
+gem 'refile-mini_magick'
 
-#layouts
-gem 'jquery-rails'
+# layouts
 gem 'bootstrap-sass'
+gem 'jquery-rails'
 
-#admins
-gem "chartkick"
+# admins
+gem 'chartkick'
 gem 'groupdate'
 
-#other
-gem 'rubocop-airbnb'
-gem 'pry-byebug'
+# other
 gem 'dotenv-rails'
+gem 'pry-byebug'
+gem 'rubocop-airbnb'
 group :production do
   gem 'mysql2'
 end

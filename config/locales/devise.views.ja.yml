@@ -25,6 +25,9 @@ ja:
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"
+        country: "出身国"
+        Signup: "新規登録"
+        Login: "ログイン"
     models:
       user: "ユーザ"
   devise:
@@ -68,6 +71,7 @@ ja:
         we_need_your_current_password_to_confirm_your_changes: "変更を反映するには現在のパスワードを入力してください"
       new:
         sign_up: "アカウント登録"
+        Sign up: "登録"
     sessions:
       new:
         sign_in: "ログイン"
