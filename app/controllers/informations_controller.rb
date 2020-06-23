@@ -5,7 +5,7 @@ class InformationsController < ApplicationController
     @informations = if @informations = params[:category_id].present?
                       Category.find(params[:category_id]).informations
                     else
-                      Information.all
+                      Information.all.order("created_at DESC")
                     end
   end
 

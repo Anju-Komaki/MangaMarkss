@@ -54,10 +54,9 @@
       <li class="nav-item"><%= link_to t(".Login"), new_user_session_path %></li>
       <li class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">Laungage<span class="caret"></span></a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <ul>
-        <%= link_to 'Japanese', :locale => 'ja', class: "dropdown-item" %><br>
-        <%= link_to 'English', :locale => 'en', class: "dropdown-item" %>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" role="menu">
+        <li role="presentation"><%= link_to 'Japanese', :locale => 'ja', class: "dropdown-item", role: "menuitem" %></li>
+        <li role="presentation"><%= link_to 'English', :locale => 'en', class: "dropdown-item", role: "menuitem"%></li>
           </ul>
       </li>
     <% end %>
