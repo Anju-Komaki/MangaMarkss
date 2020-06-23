@@ -18,6 +18,13 @@
  @import "bootstrap";
 
 
+form img.thumb {
+    margin:0 5px 5px 0;
+    max-width:160px;
+    vertical-align:bottom;
+}
+
+
 .bg-color {
 	font-family: 'Righteous', cursive,'Kosugi', sans-serif;
 }

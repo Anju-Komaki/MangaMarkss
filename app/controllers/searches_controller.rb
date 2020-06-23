@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class SearchesController < ApplicationController
+  def form
+  end
+
   def search
     @column = params['search']['column']
     @content = params['search']['content']

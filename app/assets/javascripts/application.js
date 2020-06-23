@@ -18,6 +18,7 @@
 //= require bootstrap-sprockets
 //= require chartkick
 //= require Chart.bundle
+//= require jquery.uploadThumbs.js
 //= require_tree .
 
 //topに遷移
@@ -30,4 +31,12 @@ $(function() {
     event.preventDefault();
   });
 
+});
+
+//画像のプレビュー表示
+$(function() {
+    $('form input:file').uploadThumbs({
+        position : 0,
+        imgbreak : true
+    });
 });

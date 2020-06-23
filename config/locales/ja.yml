@@ -94,6 +94,8 @@ ja:
  searches:
    search:
      search for: "検索結果:"
+   form:
+     search: "検索"
  clips:
    clip_index:
      Bookmark: "ブックマーク"

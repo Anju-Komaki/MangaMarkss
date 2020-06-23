@@ -63,6 +63,7 @@ Rails.application.routes.draw do
 
   #検索
   get '/search' => 'searches#search'
+  get 'search/form' => 'searches#form', as: 'search_form'
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

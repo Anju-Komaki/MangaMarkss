@@ -22,7 +22,12 @@
 ・読んだ漫画の感想を他者と共有したいとき
 ・まだ見ぬ自分の知らない作品に出会いたいとき
 
-## 設計書
+### 使用言語
+・Ruby on Rails
+・HTML/CSS
+・javascript
+・jQuery
+
 
 ### 機能一覧
 <https://docs.google.com/spreadsheets/d/1moVQO3BN4aDVYicmxO-AxSKwF1c_JyW0B3vISrPVMa8/edit?usp=sharing>
