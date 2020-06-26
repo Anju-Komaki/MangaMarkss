@@ -101,7 +101,7 @@ RSpec.describe 'Users', type: :request do
         end
         it '検索ボタンの表示' do
           visit root_path
-          expect(page).to have_button '検索'
+          expect(page).to have_link ''
         end
       end
     end

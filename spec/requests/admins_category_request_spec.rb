@@ -15,7 +15,7 @@ RSpec.describe 'Admin::Categories controller', type: :request do
 
       visit admins_categories_path
       fill_in 'category[name]', with: 'category'
-      click_button 'submit'
+      click_button '追加'
     end
 
     describe 'カテゴリー一覧' do
@@ -46,7 +46,7 @@ RSpec.describe 'Admin::Categories controller', type: :request do
         it 'カテゴリーの追加に成功する' do
           visit admins_categories_path
           fill_in 'category[name]', with: 'category.name'
-          click_button 'submit'
+          click_button '追加'
 
           expect(current_path).to eq('/admins/categories')
         end
@@ -54,7 +54,7 @@ RSpec.describe 'Admin::Categories controller', type: :request do
         it 'カテゴリーの追加に失敗する' do
           visit admins_categories_path
           fill_in 'category[name]', with: ''
-          click_button 'submit'
+          click_button '追加'
 
           expect(current_path).to eq('/admins/categories')
         end
@@ -77,14 +77,14 @@ RSpec.describe 'Admin::Categories controller', type: :request do
         it 'カテゴリー名の編集に成功する' do
           visit edit_admins_category_path(category)
           fill_in 'category[name]', with: category.name
-          click_button 'submit'
+          click_button '変更'
 
           expect(page).to have_content 'カテゴリー名を変更しました'
         end
         it 'カテゴリー名の編集に失敗する' do
           visit edit_admins_category_path(category)
           fill_in 'category[name]', with: ''
-          click_button 'submit'
+          click_button '変更'
 
           expect(page).to have_content 'カテゴリー名を変更できませんでした'
         end

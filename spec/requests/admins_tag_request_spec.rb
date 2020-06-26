@@ -15,7 +15,7 @@ RSpec.describe 'Admin::Tags controller', type: :request do
 
       visit admins_tags_path
       fill_in 'tag[name]', with: tag.name
-      click_button 'submit'
+      click_button '追加'
     end
 
     describe 'タグ一覧' do
@@ -46,7 +46,7 @@ RSpec.describe 'Admin::Tags controller', type: :request do
         it 'タグの追加に成功する' do
           visit admins_tags_path
           fill_in 'tag[name]', with: tag.name
-          click_button 'submit'
+          click_button '追加'
 
           expect(current_path).to eq('/admins/tags')
         end
@@ -54,7 +54,7 @@ RSpec.describe 'Admin::Tags controller', type: :request do
         it 'タグの追加に失敗する' do
           visit admins_tags_path
           fill_in 'tag[name]', with: ''
-          click_button 'submit'
+          click_button '追加'
 
           expect(current_path).to eq('/admins/tags')
         end
@@ -77,14 +77,14 @@ RSpec.describe 'Admin::Tags controller', type: :request do
         it 'タグの編集に成功する' do
           visit edit_admins_tag_path(tag)
           fill_in 'tag[name]', with: tag.name
-          click_button 'submit'
+          click_button '変更'
 
           expect(page).to have_content 'タグ名を変更しました'
         end
         it 'タグの編集に失敗する' do
           visit edit_admins_tag_path(tag)
           fill_in 'tag[name]', with: ''
-          click_button 'submit'
+          click_button '変更'
 
           expect(page).to have_content 'タグ名を変更できませんでした'
         end

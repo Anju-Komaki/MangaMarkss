@@ -63,7 +63,7 @@ RSpec.describe 'Admin', type: :request do
         end
         it '検索ボタンが表示される' do
           visit root_path
-          expect(page).to have_button '検索'
+          expect(page).to have_link ''
         end
       end
     end
