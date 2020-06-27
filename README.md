@@ -23,10 +23,10 @@
 ・まだ見ぬ自分の知らない作品に出会いたいとき<br>
 
 ### 使用言語
-・Ruby on Rails
-・HTML/CSS
-・javascript
-・jQuery
+・Ruby on Rails<br>
+・HTML/CSS<br>
+・javascript<br>
+・jQuery<br>
 
 
 ### 機能一覧
