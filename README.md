@@ -23,8 +23,8 @@
 ・まだ見ぬ自分の知らない作品に出会いたいとき<br>
 
 ### 開発環境
-Vagrant
-VirtualBox
+・Vagrant
+・VirtualBox
 
 ### 使用言語
 ・Ruby 2.5.7
