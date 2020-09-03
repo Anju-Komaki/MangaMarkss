@@ -22,14 +22,42 @@
 ・読んだ漫画の感想を他者と共有したいとき<br>
 ・まだ見ぬ自分の知らない作品に出会いたいとき<br>
 
+### 開発環境
+Vagrant
+VirtualBox
+
 ### 使用言語
-・Ruby on Rails<br>
+・Ruby 2.5.7
 ・HTML/CSS<br>
 ・javascript<br>
 ・jQuery<br>
 
-### 開発環境
+### フレームワーク
+Rails 5.2.4.3
+Bootstrap
 
+### Railsライブラリ
+country_select
+devise
+devise-i18n
+devise-i18n-views
+refile
+refile-mini_magick
+chartkick
+groupdate
+dotenv-rails
+pry-byebug
+rubocop-airbnb
+
+### JSライブラリ
+jQuery
+jQuery Raty
+
+### インフラ
+AWS(EC2,RDS,EIP)
+
+### テストフレームワーク
+Rspec
 
 ### 機能一覧
 <https://docs.google.com/spreadsheets/d/1moVQO3BN4aDVYicmxO-AxSKwF1c_JyW0B3vISrPVMa8/edit?usp=sharing>
