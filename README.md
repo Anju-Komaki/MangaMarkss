@@ -23,41 +23,41 @@
 ・まだ見ぬ自分の知らない作品に出会いたいとき<br>
 
 ### 開発環境
-・Vagrant
+・Vagrant<br>
 ・VirtualBox
 
 ### 使用言語
-・Ruby 2.5.7
+・Ruby 2.5.7<br>
 ・HTML/CSS<br>
 ・javascript<br>
 ・jQuery<br>
 
 ### フレームワーク
-Rails 5.2.4.3
-Bootstrap
+・Rails 5.2.4.3<br>
+・Bootstrap
 
 ### Railsライブラリ
-country_select
-devise
-devise-i18n
-devise-i18n-views
-refile
-refile-mini_magick
-chartkick
-groupdate
-dotenv-rails
-pry-byebug
-rubocop-airbnb
+・country_select<br>
+・devise<br>
+・devise-i18n<br>
+・devise-i18n-views<br>
+・refile<br>
+・refile-mini_magick<br>
+・chartkick<br>
+・groupdate<br>
+・dotenv-rails<br>
+・pry-byebug<br>
+・rubocop-airbnb<br>
 
 ### JSライブラリ
-jQuery
-jQuery Raty
+・jQuery<br>
+・jQuery Raty
 
 ### インフラ
-AWS(EC2,RDS,EIP)
+・AWS(EC2,RDS,EIP)
 
 ### テストフレームワーク
-Rspec
+・Rspec
 
 ### 機能一覧
 <https://docs.google.com/spreadsheets/d/1moVQO3BN4aDVYicmxO-AxSKwF1c_JyW0B3vISrPVMa8/edit?usp=sharing>
